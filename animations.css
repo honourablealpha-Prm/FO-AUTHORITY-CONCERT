@@ -1,0 +1,549 @@
+
+/* =========================================================
+   FO AUTHORITY — ANIMATION SYSTEM
+   Cinematic Zoom Carousel
+========================================================= */
+
+
+/* =========================================================
+   01. PAGE INTRODUCTION
+========================================================= */
+
+.page-loader {
+    opacity: 1;
+    visibility: visible;
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.page-loader.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-logo {
+    animation: loaderPulse 1.6s ease-in-out infinite;
+}
+
+.loader-line {
+    transform-origin: left;
+    animation: loaderLine 1.8s ease-in-out infinite;
+}
+
+.loader-text {
+    animation: loaderText 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes loaderPulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(0.94);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.04);
+    }
+}
+
+@keyframes loaderLine {
+    0% {
+        transform: scaleX(0.15);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(0.15);
+        opacity: 0.3;
+    }
+}
+
+@keyframes loaderText {
+    from {
+        opacity: 0.35;
+        letter-spacing: 2px;
+    }
+
+    to {
+        opacity: 0.9;
+        letter-spacing: 4px;
+    }
+}
+
+
+/* =========================================================
+   02. BACKGROUND ATMOSPHERE
+========================================================= */
+
+.ambient-glow {
+    will-change: transform;
+    animation: ambientFloat 12s ease-in-out infinite alternate;
+}
+
+.glow-one {
+    animation-delay: -2s;
+}
+
+.glow-two {
+    animation-delay: -5s;
+}
+
+.glow-three {
+    animation-delay: -8s;
+}
+
+@keyframes ambientFloat {
+    from {
+        transform: translate3d(-20px, -15px, 0) scale(0.95);
+    }
+
+    to {
+        transform: translate3d(35px, 25px, 0) scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   03. CINEMATIC SCENE TRANSITIONS
+   GSAP controls portrait and content movement.
+   CSS must not override those transforms.
+========================================================= */
+
+.scene-viewport {
+    perspective: none;
+    overflow: hidden;
+    transform-style: flat;
+}
+
+.portrait-stage {
+    transform-style: flat;
+    transform-origin: center center;
+    backface-visibility: visible;
+    will-change: transform, opacity;
+}
+
+.portrait-container {
+    transform-style: flat;
+    overflow: hidden;
+}
+
+.portrait-image {
+    transform-origin: center center;
+    will-change: transform, opacity, filter;
+    transition: none;
+}
+
+.section-content {
+    transform-style: flat;
+}
+
+.content-panel {
+    backface-visibility: visible;
+    will-change: opacity, transform, filter;
+}
+
+/* GSAP owns all section transitions. */
+.content-panel.active {
+    animation: none !important;
+}
+
+.content-panel.active .content-eyebrow,
+.content-panel.active .hero-title,
+.content-panel.active .section-title,
+.content-panel.active .hero-description,
+.content-panel.active .section-description,
+.content-panel.active .hero-date,
+.content-panel.active .celebration-details,
+.content-panel.active .contact-note {
+    animation: none !important;
+}
+
+
+/* =========================================================
+   04. PORTRAIT FRAME
+========================================================= */
+
+.portrait-frame {
+    opacity: 0;
+    animation: frameReveal 1.5s ease forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes frameReveal {
+    from {
+        opacity: 0;
+        inset: 45px;
+    }
+
+    to {
+        opacity: 1;
+        inset: 20px;
+    }
+}
+
+
+/* =========================================================
+   05. NAVIGATION INTERACTION
+========================================================= */
+
+.nav-item {
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.nav-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(201, 166, 107, 0.12),
+            transparent
+        );
+
+    transform: translateX(-105%);
+
+    transition:
+        transform 0.55s cubic-bezier(.16, 1, .3, 1);
+
+    z-index: -1;
+}
+
+.nav-item:hover::before,
+.nav-item.active::before {
+    transform: translateX(0);
+}
+
+.nav-item .nav-indicator {
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.nav-item.active .nav-indicator {
+    animation: indicatorPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--gold);
+    }
+
+    50% {
+        box-shadow: 0 0 14px var(--gold-light);
+    }
+}
+
+
+/* =========================================================
+   06. FORM DECORATIONS
+========================================================= */
+
+.form-decoration {
+    will-change: transform;
+}
+
+.decoration-one {
+    animation: decorationFloatOne 7s ease-in-out infinite;
+}
+
+.decoration-two {
+    animation: decorationFloatTwo 6s ease-in-out infinite;
+}
+
+.decoration-three {
+    animation: decorationFloatThree 8s ease-in-out infinite;
+}
+
+@keyframes decorationFloatOne {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate3d(-12px, -20px, 0) rotate(35deg);
+    }
+}
+
+@keyframes decorationFloatTwo {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(15px, -18px, 0);
+    }
+}
+
+@keyframes decorationFloatThree {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate3d(-10px, 15px, 0) rotate(90deg);
+    }
+}
+
+
+/* =========================================================
+   07. REGISTRATION CARD
+========================================================= */
+
+.registration-card {
+    transition:
+        box-shadow 0.65s ease,
+        border-color 0.65s ease;
+}
+
+.registration-card.card-enter {
+    animation: cardEnter 0.9s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+@keyframes cardEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.94);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   08. FORM STEP TRANSITIONS
+========================================================= */
+
+.form-step {
+    backface-visibility: visible;
+}
+
+.form-step.step-enter {
+    animation: formStepEnter 0.65s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.form-step.step-exit {
+    animation: formStepExit 0.35s ease both;
+}
+
+@keyframes formStepEnter {
+    from {
+        opacity: 0;
+        transform: translateX(25px) scale(0.97);
+        filter: blur(3px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes formStepExit {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+
+
+/* =========================================================
+   09. FORM PROGRESS
+========================================================= */
+
+.progress-track span {
+    transition: width 0.7s cubic-bezier(.16, 1, .3, 1);
+}
+
+.progress-step {
+    transition: color 0.4s ease;
+}
+
+.progress-step > span {
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.progress-step.active > span {
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   10. INPUT INTERACTION
+========================================================= */
+
+.input-wrapper {
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.input-wrapper:focus-within {
+    transform: translateY(-2px);
+}
+
+.form-field {
+    animation: fieldReveal 0.6s ease both;
+}
+
+.form-step.active .form-field:nth-of-type(1) {
+    animation-delay: 0.05s;
+}
+
+.form-step.active .form-field:nth-of-type(2) {
+    animation-delay: 0.12s;
+}
+
+.form-step.active .form-field:nth-of-type(3) {
+    animation-delay: 0.19s;
+}
+
+@keyframes fieldReveal {
+    from {
+        opacity: 0;
+        transform: translateY(13px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   11. BUTTON INTERACTION
+========================================================= */
+
+.form-button {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.form-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.18) 50%,
+            transparent 80%
+        );
+
+    transform: translateX(-120%);
+    transition: transform 0.7s ease;
+
+    z-index: -1;
+}
+
+.form-button:hover::before {
+    transform: translateX(120%);
+}
+
+
+/* =========================================================
+   12. SUCCESS ANIMATION
+========================================================= */
+
+.form-success.active {
+    animation: successReveal 0.8s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+@keyframes successReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+
+.form-success.active .success-icon {
+    animation: successPop 0.65s cubic-bezier(.16, 1, .3, 1) both;
+    animation-delay: 0.2s;
+}
+
+@keyframes successPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-30deg);
+    }
+
+    70% {
+        transform: scale(1.15) rotate(8deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+
+/* =========================================================
+   13. ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ambient-glow,
+    .loader-logo,
+    .loader-line,
+    .loader-text,
+    .decoration-one,
+    .decoration-two,
+    .decoration-three,
+    .nav-item.active .nav-indicator {
+        animation: none !important;
+    }
+
+    .portrait-image,
+    .content-panel,
+    .registration-card,
+    .form-step,
+    .form-success {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* =========================================================
+   14. NAVIGATION LAYER
+========================================================= */
+
+.side-navigation {
+    z-index: 30;
+}

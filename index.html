@@ -1,0 +1,902 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+
+    <meta name="description"
+        content="FO Authority — A birthday musical concert celebrating life, music and grace.">
+
+    <title>FO Authority | Birthday Musical Concert</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+
+    <!-- Application -->
+  <script type="module" src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <span class="loader-logo">FO</span>
+            <span class="loader-line"></span>
+            <span class="loader-text">A CELEBRATION OF LIFE</span>
+        </div>
+    </div>
+
+
+    <!-- MAIN EXPERIENCE -->
+    <main class="experience" id="experience">
+
+        <!-- BACKGROUND ATMOSPHERE -->
+        <div class="background-atmosphere">
+            <div class="ambient-glow glow-one"></div>
+            <div class="ambient-glow glow-two"></div>
+            <div class="ambient-glow glow-three"></div>
+            <div class="grain-overlay"></div>
+        </div>
+
+
+        <!-- MAIN INTERFACE -->
+        <section class="main-interface">
+
+            <!-- LEFT NAVIGATION -->
+            <aside class="side-navigation" id="sideNavigation">
+
+                <!-- BRAND -->
+                <a href="#welcome" class="brand" aria-label="FO Authority home"
+                    data-nav="welcome">
+
+                    <span class="brand-symbol">FO</span>
+
+                    <span class="brand-details">
+                        <strong>AUTHORITY</strong>
+                        <small>THE CELEBRATION</small>
+                    </span>
+
+                </a>
+
+
+                <!-- NAVIGATION ITEMS -->
+                
+<nav class="navigation-links" aria-label="Main navigation">
+
+    <span class="nav-heading">EXPLORE</span>
+
+    <button class="nav-item active"
+        type="button"
+        data-section="welcome"
+        aria-label="Welcome"
+        title="Welcome">
+
+        <span class="nav-icon"><i data-lucide="house"></i></span>
+        <span class="nav-label">Welcome</span>
+        <span class="nav-indicator"></span>
+    </button>
+
+    <button class="nav-item"
+        type="button"
+        data-section="about"
+        aria-label="About FO"
+        title="About FO">
+
+        <span class="nav-icon"><i data-lucide="user-round"></i></span>
+        <span class="nav-label">About FO</span>
+        <span class="nav-indicator"></span>
+    </button>
+
+    <button class="nav-item"
+        type="button"
+        data-section="celebration"
+        aria-label="The Celebration"
+        title="The Celebration">
+
+        <span class="nav-icon"><i data-lucide="party-popper"></i></span>
+        <span class="nav-label">The Celebration</span>
+        <span class="nav-indicator"></span>
+    </button>
+
+    <button class="nav-item"
+        type="button"
+        data-section="registration"
+        aria-label="Registration"
+        title="Registration">
+
+        <span class="nav-icon"><i data-lucide="ticket"></i></span>
+        <span class="nav-label">Registration</span>
+        <span class="nav-indicator"></span>
+    </button>
+
+    <button class="nav-item"
+        type="button"
+        data-section="contact"
+        aria-label="Contact"
+        title="Contact">
+
+        <span class="nav-icon"><i data-lucide="mail"></i></span>
+        <span class="nav-label">Contact</span>
+        <span class="nav-indicator"></span>
+    </button>
+
+</nav>
+
+
+                <!-- NAVIGATION FOOTER -->
+                <div class="navigation-footer">
+
+                    <span class="footer-label">A SPECIAL DAY</span>
+
+                    <div class="footer-date">
+                        <strong>23</strong>
+
+                        <span>
+                            DECEMBER
+                            <small>2026</small>
+                        </span>
+                    </div>
+
+                    <span class="footer-location">
+                        FO AUTHORITY
+                    </span>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- MAIN VISUAL STAGE -->
+            <!-- FULL-SCREEN CINEMATIC SCENE -->
+<div class="scene-viewport" id="sceneViewport">
+
+    <section class="portrait-stage" id="portraitStage">
+
+                <!-- PORTRAIT BACKGROUND -->
+                <div class="portrait-container" id="portraitContainer">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1600&q=90"
+                        alt="Temporary portrait placeholder for FO Authority"
+                        class="portrait-image"
+                        id="mainPortrait"
+                    >
+
+                    <div class="portrait-shade"></div>
+                    <div class="portrait-vignette"></div>
+
+                </div>
+
+
+                <!-- DECORATIVE FRAME -->
+                <div class="portrait-frame">
+                    <span class="frame-corner corner-top-left"></span>
+                    <span class="frame-corner corner-top-right"></span>
+                    <span class="frame-corner corner-bottom-left"></span>
+                    <span class="frame-corner corner-bottom-right"></span>
+                </div>
+
+
+                <!-- PORTRAIT SIDE DETAILS -->
+                <div class="portrait-side-label">
+                    <span class="side-line"></span>
+                    <span>THE WOMAN BEHIND THE MUSIC</span>
+                </div>
+
+
+                <!-- SECTION CONTENT -->
+                <div class="section-content" id="sectionContent">
+
+                    <!-- WELCOME SECTION -->
+                    <article class="content-panel active"
+                        id="section-welcome"
+                        data-content="welcome">
+
+                        <span class="content-eyebrow">
+                            A SPECIAL CELEBRATION
+                        </span>
+
+                        <h1 class="hero-title">
+                            FO
+                            <span>AUTHORITY</span>
+                        </h1>
+
+                        <p class="hero-description">
+                            A celebration of life, music, grace
+                            and unforgettable moments.
+                        </p>
+
+                        <div class="hero-date">
+
+                            <span class="date-day">23</span>
+
+                            <span class="date-details">
+                                <strong>DECEMBER</strong>
+                                <small>2026</small>
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ABOUT SECTION -->
+                    <article class="content-panel"
+                        id="section-about"
+                        data-content="about">
+
+                        <span class="content-eyebrow">
+                            THE WOMAN. THE VOICE. THE STORY.
+                        </span>
+
+                        <h2 class="section-title">
+                            Meet <span>FO Authority.</span>
+                        </h2>
+
+                        <p class="section-description">
+                            A life filled with grace, strength,
+                            beautiful memories and the gift of music.
+                        </p>
+
+                        <p class="section-description secondary-description">
+                            Her story deserves to be celebrated.
+                            More about her journey will be shared here.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- CELEBRATION SECTION -->
+                    <article class="content-panel"
+                        id="section-celebration"
+                        data-content="celebration">
+
+                        <span class="content-eyebrow">
+                            MARK THE MOMENT
+                        </span>
+
+                        <h2 class="section-title">
+                            A Night of
+                            <span>Music & Memories.</span>
+                        </h2>
+
+                        <p class="section-description">
+                            Join us as we celebrate a remarkable
+                            life through music, love and gratitude.
+                        </p>
+
+                        <div class="celebration-details">
+
+                            <div class="detail-item">
+                                <i data-lucide="calendar-days"></i>
+
+                                <span>
+                                    <small>DATE</small>
+                                    <strong>23 December 2026</strong>
+                                </span>
+                            </div>
+
+                            <div class="detail-item">
+                                <i data-lucide="music-2"></i>
+
+                                <span>
+                                    <small>EVENT</small>
+                                    <strong>Birthday Musical Concert</strong>
+                                </span>
+                            </div>
+
+                            <div class="detail-item">
+                                <i data-lucide="map-pin"></i>
+
+                                <span>
+                                    <small>VENUE</small>
+                                    <strong>To be announced</strong>
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+<!-- =========================================
+     REGISTRATION SECTION
+========================================= -->
+
+<article class="content-panel registration-panel"
+    id="section-registration"
+    data-content="registration">
+
+    <!-- REGISTRATION INTRO -->
+    <div class="registration-intro">
+
+        <span class="intro-eyebrow">
+            YOU ARE INVITED
+        </span>
+
+        <h2 class="intro-title">
+            Reserve Your
+            <span>Place.</span>
+        </h2>
+
+        <p class="intro-description">
+            Complete your guest registration to be part
+            of this special celebration.
+        </p>
+
+    </div>
+
+
+    <!-- FORM EXPERIENCE -->
+    <div class="form-scene" id="formScene">
+
+        <div class="form-decoration decoration-one"></div>
+        <div class="form-decoration decoration-two"></div>
+        <div class="form-decoration decoration-three"></div>
+
+
+        <!-- SINGLE REGISTRATION CONTAINER -->
+        <div class="registration-card" id="registrationCard">
+
+
+            <!-- LIQUID GLASS VIDEO BACKGROUND -->
+            <div class="liquid-glass-background" aria-hidden="true">
+
+                <video
+                    class="liquid-glass-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata">
+
+                    <source
+                        src="assets/videos/liquid-glass.mp4"
+                        type="video/mp4">
+
+                </video>
+
+                <div class="liquid-glass-overlay"></div>
+
+            </div>
+
+
+            <!-- SINGLE SCROLLABLE CONTENT WRAPPER -->
+            <div class="registration-card-content">
+
+
+                <!-- FORM HEADER -->
+                <div class="form-header">
+
+                    <div class="form-brand">
+                        <span>FO</span>
+                    </div>
+
+                    <div class="form-heading">
+                        <span>FO AUTHORITY</span>
+                        <h3>Guest Registration</h3>
+                        <p>Be part of the celebration.</p>
+                    </div>
+
+                </div>
+
+
+                <!-- STEP INDICATOR -->
+                <div class="form-progress">
+
+                    <div class="progress-step active"
+                        data-progress="1">
+                        <span>01</span>
+                        <small>Personal</small>
+                    </div>
+
+                    <div class="progress-track">
+                        <span id="progressTrack"></span>
+                    </div>
+
+                    <div class="progress-step"
+                        data-progress="2">
+                        <span>02</span>
+                        <small>Tickets</small>
+                    </div>
+
+                    <div class="progress-track">
+                        <span></span>
+                    </div>
+
+                    <div class="progress-step"
+                        data-progress="3">
+                        <span>03</span>
+                        <small>Confirm</small>
+                    </div>
+
+                </div>
+
+
+                <!-- REGISTRATION FORM -->
+                <form id="guestRegistrationForm" novalidate>
+
+
+                    <!-- =================================
+                         STEP ONE: PERSONAL INFORMATION
+                    ================================== -->
+
+                    <div class="form-step active" data-step="1">
+
+                        <div class="form-step-heading">
+                            <span>STEP 01</span>
+                            <h4>Let's get to know you.</h4>
+                            <p>Enter your personal details below.</p>
+                        </div>
+
+
+                        <!-- FULL NAME -->
+                        <div class="form-field">
+
+                            <label for="guestName">
+                                Full name
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i data-lucide="user"></i>
+
+                                <input
+                                    type="text"
+                                    id="guestName"
+                                    name="guestName"
+                                    placeholder="Your Full Name"
+                                    autocomplete="name"
+                                    required>
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="form-field">
+
+                            <label for="guestEmail">
+                                Email address
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i data-lucide="mail"></i>
+
+                                <input
+                                    type="email"
+                                    id="guestEmail"
+                                    name="guestEmail"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required>
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- PHONE -->
+                        <div class="form-field">
+
+                            <label for="guestPhone">
+                                Phone number
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i data-lucide="phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="guestPhone"
+                                    name="guestPhone"
+                                    placeholder="Your Phone Number"
+                                    autocomplete="tel"
+                                    required>
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- CONTINUE -->
+                        <button
+                            type="button"
+                            class="form-button next-button"
+                            data-next="2">
+
+                            Continue
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================
+                         STEP TWO: GUEST ATTENDANCE
+                    ================================== -->
+
+                    <div class="form-step attendance-step"
+                        data-step="2">
+
+                        <div class="form-step-heading">
+                            <span>STEP 02</span>
+                            <h4>Your attendance.</h4>
+                            <p>
+                                Tell us how many people will be
+                                celebrating with you.
+                            </p>
+                        </div>
+
+
+                        <!-- ADDITIONAL GUESTS -->
+                        <div class="attendance-counter">
+
+                            <div class="attendance-counter-info">
+                                <h5>Additional Guests</h5>
+                                <p>
+                                    Family, friends and loved ones
+                                    joining you.
+                                </p>
+                            </div>
+
+                            <div class="quantity-control">
+
+                                <button
+                                    type="button"
+                                    class="quantity-btn"
+                                    id="decreaseGuests"
+                                    aria-label="Remove one additional guest">
+                                    −
+                                </button>
+
+                                <span class="quantity-value"
+                                    id="additionalGuests">
+                                    0
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="quantity-btn"
+                                    id="increaseGuests"
+                                    aria-label="Add one additional guest">
+                                    +
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ATTENDANCE SUMMARY -->
+                        <div class="attendance-summary">
+
+                            <div class="attendance-summary-row">
+                                <span>Primary Attendee</span>
+                                <strong>1</strong>
+                            </div>
+
+                            <div class="attendance-summary-row">
+                                <span>Additional Guests</span>
+                                <strong id="guestSummary">0</strong>
+                            </div>
+
+                            <div class="attendance-summary-divider"></div>
+
+                            <div class="attendance-total-row">
+                                <span>Total Attendees</span>
+                                <strong id="totalAttendees">1</strong>
+                            </div>
+
+                        </div>
+
+
+                        <!-- OPTIONAL MESSAGE -->
+                        <div class="form-field attendance-message">
+
+                            <label for="guestMessage">
+                                Additional Message (Optional)
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i data-lucide="message-circle"></i>
+
+                                <textarea
+                                    id="guestMessage"
+                                    name="guestMessage"
+                                    rows="3"
+                                    placeholder="Any additional information you'd like us to know..."></textarea>
+                            </div>
+
+                        </div>
+
+
+                        <!-- NAVIGATION BUTTONS -->
+                        <div class="form-navigation attendance-navigation">
+
+                            <button
+                                type="button"
+                                class="form-button form-button-back"
+                                data-back="1">
+
+                                <i data-lucide="arrow-left"></i>
+                                <span>Back</span>
+
+                            </button>
+
+                            <button
+                                type="button"
+                                class="form-button form-button-next"
+                                data-next="3">
+
+                                <span>Continue</span>
+                                <i data-lucide="arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         STEP THREE: REVIEW REGISTRATION
+                    ================================== -->
+
+                    <div class="form-step review-step"
+                        data-step="3">
+
+                        <div class="form-step-heading">
+                            <span>STEP 03</span>
+                            <h4>Review your details.</h4>
+                            <p>
+                                Take a moment to confirm your
+                                registration information.
+                            </p>
+                        </div>
+
+
+                        <!-- REVIEW CARD -->
+                        <div class="review-card"
+                            id="registrationReview">
+
+                            <div class="review-card-heading">
+                                <i data-lucide="user-round"></i>
+                                <span>PERSONAL INFORMATION</span>
+                            </div>
+
+                            <div class="review-item">
+                                <span>Full name</span>
+                                <strong id="reviewName">—</strong>
+                            </div>
+
+                            <div class="review-item">
+                                <span>Email address</span>
+                                <strong id="reviewEmail">—</strong>
+                            </div>
+
+                            <div class="review-item">
+                                <span>Phone number</span>
+                                <strong id="reviewPhone">—</strong>
+                            </div>
+
+                            <div class="review-divider"></div>
+
+                            <div class="review-card-heading attendance-review-heading">
+                                <i data-lucide="users-round"></i>
+                                <span>ATTENDANCE SUMMARY</span>
+                            </div>
+
+                            <div class="review-item">
+                                <span>Primary attendee</span>
+                                <strong>1</strong>
+                            </div>
+
+                            <div class="review-item">
+                                <span>Additional guests</span>
+                                <strong id="reviewAdditionalGuests">0</strong>
+                            </div>
+
+                            <div class="review-total">
+                                <span>Total attendees</span>
+                                <strong id="reviewTotalAttendees">1</strong>
+                            </div>
+
+                            <div class="review-message"
+                                id="reviewMessageContainer">
+
+                                <span>Additional message</span>
+                                <p id="reviewMessage">—</p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONFIRMATION -->
+                        <label class="consent-field">
+
+                            <input
+                                type="checkbox"
+                                id="registrationConsent"
+                                required>
+
+                            <span>
+                                I confirm that the information provided
+                                is correct.
+                            </span>
+
+                        </label>
+
+
+                        <!-- NAVIGATION -->
+                        <div class="form-actions">
+
+                            <button
+                                type="button"
+                                class="form-button form-button-back"
+                                data-back="2">
+
+                                <i data-lucide="arrow-left"></i>
+                                Back
+
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="form-button form-button-next">
+
+                                Complete Registration
+                                <i data-lucide="check"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         SUCCESS STATE
+                    ================================== -->
+
+                    <div class="form-success"
+                        id="formSuccess"
+                        aria-live="polite">
+
+                        <div class="success-icon">
+                            <i data-lucide="check"></i>
+                        </div>
+
+                        <span>REGISTRATION COMPLETE</span>
+
+                        <h4>You're on the list.</h4>
+
+                        <p>
+                            Thank you for being part of
+                            the FO Authority celebration.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="success-return-btn"
+                            id="returnToExperience">
+
+                            Return to experience
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+            <!-- END SCROLLABLE CONTENT WRAPPER -->
+
+
+        </div>
+        <!-- END REGISTRATION CARD -->
+
+
+    </div>
+    <!-- END FORM SCENE -->
+
+
+</article>
+<!-- END REGISTRATION SECTION -->
+
+
+
+                    <!-- CONTACT SECTION -->
+                    <article class="content-panel"
+                        id="section-contact"
+                        data-content="contact">
+
+                        <span class="content-eyebrow">
+                            WE WOULD LOVE TO HEAR FROM YOU
+                        </span>
+
+                        <h2 class="section-title">
+                            Let's Stay
+                            <span>Connected.</span>
+                        </h2>
+
+                        <p class="section-description">
+                            For questions and enquiries about the
+                            birthday musical concert, please reach
+                            out to the event organisers.
+                        </p>
+
+                        <div class="contact-note">
+   <a href="https://wa.me/2347064932054"
+   class="contact-whatsapp"
+   target="_blank"
+   rel="noopener noreferrer">
+    23470XXXXX054
+</a>
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+
+                <!-- STAGE FOOTER -->
+                <div class="stage-footer">
+
+                    <span class="stage-footer-left">
+                        A LIFE WORTH CELEBRATING
+                    </span>
+
+                    <div class="stage-footer-center">
+                        <span class="stage-dot"></span>
+                        <span id="currentSectionLabel">WELCOME</span>
+                    </div>
+
+                    <span class="stage-footer-right">
+                        2026
+                    </span>
+
+                </div>
+
+      </section>
+
+</div>
+<!-- END FULL-SCREEN CINEMATIC SCENE -->
+
+</section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,7484 @@
+
+/* =========================================================
+   FO AUTHORITY — GLOBAL DESIGN SYSTEM
+========================================================= */
+
+:root {
+    --black: #090909;
+    --black-soft: #11100f;
+    --black-light: #191714;
+
+    --gold: #c9a66b;
+    --gold-light: #e8d1a0;
+    --gold-dark: #846b43;
+
+    --ivory: #f4efe5;
+    --muted: #aaa49a;
+    --muted-dark: #777168;
+
+    --glass: rgba(255, 255, 255, 0.045);
+    --glass-border: rgba(255, 255, 255, 0.12);
+
+    --heading-font: "Cormorant Garamond", serif;
+    --body-font: "DM Sans", sans-serif;
+
+    --ease: cubic-bezier(.22, 1, .36, 1);
+    --transition: 0.6s var(--ease);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: var(--black);
+    color: var(--ivory);
+    font-family: var(--body-font);
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   MAIN EXPERIENCE
+========================================================= */
+
+.experience {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 600px;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(
+            ellipse at 70% 45%,
+            rgba(120, 90, 48, 0.09),
+            transparent 50%
+        ),
+        var(--black);
+}
+
+
+/* =========================================================
+   BACKGROUND ATMOSPHERE
+========================================================= */
+
+.background-atmosphere {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.ambient-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+}
+
+.glow-one {
+    top: -200px;
+    right: -100px;
+    background: #a17b43;
+}
+
+.glow-two {
+    bottom: -250px;
+    left: 20%;
+    background: #674b2a;
+}
+
+.glow-three {
+    top: 40%;
+    left: -250px;
+    background: #806037;
+}
+
+.grain-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.055;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   MAIN INTERFACE
+========================================================= */
+
+.main-interface {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100svh;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   SIDE NAVIGATION
+========================================================= */
+
+.side-navigation {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-width: 0;
+    height: 100%;
+
+    padding: 28px 23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.012)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 20px;
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    z-index: 20;
+}
+
+
+/* BRAND */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+}
+
+.brand-symbol {
+    display: grid;
+    place-items: center;
+
+    width: 43px;
+    height: 43px;
+
+    border: 1px solid rgba(201,166,107,0.65);
+    border-radius: 13px;
+
+    color: var(--gold-light);
+    font-family: var(--heading-font);
+    font-size: 22px;
+    font-weight: 600;
+
+    background: rgba(201,166,107,0.08);
+    box-shadow: 0 0 25px rgba(201,166,107,0.08);
+}
+
+.brand-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.brand-details strong {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.brand-details small {
+    color: var(--gold);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+
+/* NAVIGATION */
+
+.navigation-links {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.nav-heading {
+    margin-bottom: 17px;
+    color: var(--muted-dark);
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    width: 100%;
+    min-height: 54px;
+    padding: 0 14px;
+
+    color: var(--muted);
+    background: transparent;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    cursor: pointer;
+    text-align: left;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition);
+}
+
+.nav-item:hover {
+    color: var(--ivory);
+    background: rgba(255,255,255,0.045);
+    transform: translateX(3px);
+}
+
+.nav-item.active {
+    color: var(--gold-light);
+    background:
+        linear-gradient(
+            100deg,
+            rgba(201,166,107,0.14),
+            rgba(201,166,107,0.025)
+        );
+
+    border-color: rgba(201,166,107,0.2);
+}
+
+.nav-number {
+    color: var(--muted-dark);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.nav-item.active .nav-number {
+    color: var(--gold);
+}
+
+.nav-label {
+    font-size: 12px;
+    letter-spacing: 0.3px;
+}
+
+.nav-indicator {
+    position: absolute;
+    right: 12px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+    background: transparent;
+
+    transition: var(--transition);
+}
+
+.nav-item.active .nav-indicator {
+    background: var(--gold-light);
+    box-shadow: 0 0 10px var(--gold);
+}
+
+
+/* NAVIGATION FOOTER */
+
+.navigation-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255,255,255,0.09);
+}
+
+.footer-label {
+    color: var(--muted-dark);
+    font-size: 8px;
+    letter-spacing: 2.5px;
+}
+
+.footer-date {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-date > strong {
+    color: var(--gold-light);
+    font-family: var(--heading-font);
+    font-size: 43px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.footer-date > span {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-date small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.footer-location {
+    color: var(--muted-dark);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PORTRAIT STAGE
+========================================================= */
+
+.portrait-stage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    isolation: isolate;
+    border: none;
+    border-radius: 0;
+    background: #090909;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    will-change: transform, opacity;
+}
+
+
+/* PORTRAIT IMAGE */
+
+.portrait-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -2;
+}
+
+
+.portrait-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    transform: scale(1);
+    transform-origin: center center;
+    transition: none !important;
+    will-change: transform, opacity, filter;
+}
+
+/* No additional hover zoom */
+.portrait-stage:hover .portrait-image {
+    transform: none;
+}
+
+/* IMAGE SHADING */
+
+.portrait-shade {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(9,9,9,0.83) 0%,
+            rgba(9,9,9,0.52) 30%,
+            rgba(9,9,9,0.06) 75%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(9,9,9,0.85) 0%,
+            transparent 32%,
+            rgba(9,9,9,0.14) 100%
+        );
+}
+
+.portrait-vignette {
+    position: absolute;
+    inset: 0;
+
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.38);
+    pointer-events: none;
+}
+
+
+/* FRAME */
+
+.portrait-frame {
+    position: absolute;
+    inset: 20px;
+    pointer-events: none;
+    border: 1px solid rgba(255,255,255,0.09);
+    z-index: 2;
+}
+
+.frame-corner {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-color: var(--gold);
+    border-style: solid;
+    opacity: 0.75;
+}
+
+.corner-top-left {
+    top: -1px;
+    left: -1px;
+    border-width: 1px 0 0 1px;
+}
+
+.corner-top-right {
+    top: -1px;
+    right: -1px;
+    border-width: 1px 1px 0 0;
+}
+
+.corner-bottom-left {
+    bottom: -1px;
+    left: -1px;
+    border-width: 0 0 1px 1px;
+}
+
+.corner-bottom-right {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 1px 1px 0;
+}
+
+
+/* SIDE LABEL */
+
+.portrait-side-label {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    transform: rotate(90deg) translateX(50%);
+    transform-origin: right center;
+
+    color: rgba(255,255,255,0.65);
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.side-line {
+    width: 34px;
+    height: 1px;
+    background: var(--gold);
+}
+
+
+/* =====================================================
+   MAIN CONTENT — VERTICAL POSITION CORRECTION
+===================================================== */
+
+.section-content {
+    
+    
+    
+
+    
+
+    
+    z-index: 5;
+}
+
+.content-panel {
+    
+    
+    
+}
+
+.content-panel.active {
+    
+}
+
+.content-eyebrow {
+    display: inline-block;
+    margin-bottom: 25px;
+
+    color: var(--gold-light);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--ivory);
+    font-family: var(--heading-font);
+    font-size: clamp(76px, 10vw, 145px);
+    font-weight: 400;
+
+    line-height: 0.72;
+    letter-spacing: -5px;
+}
+
+.hero-title span {
+    margin-top: 19px;
+
+    color: var(--gold-light);
+    font-size: 0.36em;
+    letter-spacing: 12px;
+}
+
+.hero-description {
+    max-width: 340px;
+    margin-top: 35px;
+
+    color: rgba(244,239,229,0.76);
+    font-size: 13px;
+    font-weight: 300;
+
+    line-height: 1.9;
+}
+
+.hero-date {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.date-day {
+    color: var(--gold-light);
+    font-family: var(--heading-font);
+    font-size: 62px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.date-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.date-details strong {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.date-details small {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* OTHER SECTIONS */
+
+.section-title {
+    max-width: 530px;
+
+    color: var(--ivory);
+    font-family: var(--heading-font);
+    font-size: clamp(42px, 5.5vw, 75px);
+    font-weight: 400;
+
+    line-height: 0.98;
+}
+
+.section-title span {
+    display: block;
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+.section-description {
+    max-width: 400px;
+    margin-top: 24px;
+
+    color: rgba(244,239,229,0.77);
+    font-size: 13px;
+    font-weight: 300;
+
+    line-height: 1.9;
+}
+
+.secondary-description {
+    color: var(--muted);
+}
+
+
+/* CELEBRATION DETAILS */
+
+.celebration-details {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-top: 34px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.detail-item > i {
+    display: grid;
+    place-items: center;
+
+    width: 39px;
+    height: 39px;
+
+    color: var(--gold-light);
+    background: rgba(201,166,107,0.1);
+    border: 1px solid rgba(201,166,107,0.25);
+    border-radius: 11px;
+}
+
+.detail-item > span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-item small {
+    color: var(--muted-dark);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.detail-item strong {
+    color: var(--ivory);
+    font-size: 11px;
+    font-weight: 400;
+}
+
+
+/* CONTACT */
+
+.contact-note {
+    margin-top: 30px;
+    padding: 17px 20px;
+
+    color: var(--gold-light);
+    font-size: 11px;
+
+    background: rgba(201,166,107,0.07);
+    border: 1px solid rgba(201,166,107,0.2);
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   STAGE FOOTER
+========================================================= */
+
+.stage-footer {
+    position: absolute;
+    bottom: 35px;
+    left: 45px;
+    right: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 5;
+}
+
+.stage-footer-left,
+.stage-footer-right {
+    color: rgba(255,255,255,0.55);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.stage-footer-center {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--gold-light);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.stage-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 12px var(--gold);
+}
+
+
+/* =========================================================
+   REGISTRATION PANEL
+========================================================= */
+
+
+.registration-panel {
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+    
+
+    
+    
+}
+
+
+.registration-intro {
+    
+}
+
+.registration-intro .content-eyebrow {
+    margin-bottom: 12px;
+}
+
+.registration-intro .section-title {
+    font-size: clamp(35px, 4vw, 55px);
+}
+
+.registration-intro .section-description {
+    margin-top: 10px;
+    font-size: 11px;
+}
+
+
+/* FORM SCENE */
+
+.form-scene {
+    
+    
+    
+
+    
+    isolation: isolate;
+}
+
+
+/* FLOATING DECORATIONS */
+
+.form-decoration {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.decoration-one {
+    top: -32px;
+    right: 10%;
+    width: 78px;
+    height: 78px;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(255,255,255,0.65),
+            rgba(201,166,107,0.22) 30%,
+            rgba(201,166,107,0.03) 70%
+        );
+
+    border: 1px solid rgba(255,255,255,0.23);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.decoration-two {
+    bottom: 12%;
+    left: -25px;
+    width: 48px;
+    height: 48px;
+
+    background: rgba(201,166,107,0.12);
+    border: 1px solid rgba(201,166,107,0.28);
+    backdrop-filter: blur(15px);
+}
+
+.decoration-three {
+    top: 40%;
+    right: -25px;
+    width: 35px;
+    height: 35px;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+}
+
+
+/* REGISTRATION CARD */
+
+/* =========================================================
+   FO AUTHORITY — LIQUID GLASS REGISTRATION CARD
+   Fixed desktop and mobile video layering
+========================================================= */
+
+.registration-card {
+    
+    isolation: isolate;
+    
+
+    
+    
+
+    color: var(--ivory);
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.28),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3),
+        inset 0 -1px 1px rgba(255, 255, 255, 0.08);
+
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    backdrop-filter: blur(18px) saturate(140%);
+}
+
+/* VIDEO BACKGROUND CONTAINER */
+.registration-card .liquid-glass-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+/* VIDEO */
+.registration-card .liquid-glass-video {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 0.78;
+    filter: brightness(0.82) contrast(1.08) saturate(0.75);
+}
+
+/* READABILITY OVERLAY */
+.registration-card .liquid-glass-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.12),
+            transparent 38%,
+            rgba(0, 0, 0, 0.20) 100%
+        ),
+        rgba(12, 12, 12, 0.22);
+}
+
+/* KEEP FORM CONTENT ABOVE VIDEO */
+.registration-card > *:not(.liquid-glass-background) {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* GLASS REFLECTION */
+
+.registration-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    border-radius: inherit;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.20),
+            transparent 24%,
+            transparent 72%,
+            rgba(255, 255, 255, 0.08)
+        );
+
+    opacity: 0.75;
+}
+
+/* KEEP FORM CONTENT ABOVE THE VIDEO */
+
+.registration-card > *:not(.liquid-glass-background) {
+    position: relative;
+    z-index: 1;
+}
+
+/* FORM HEADER */
+
+.form-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 23px;
+}
+
+.form-brand {
+    display: grid;
+    place-items: center;
+
+    width: 46px;
+    height: 46px;
+
+    color: var(--gold-light);
+    background: #181613;
+    border-radius: 14px;
+
+    font-family: var(--heading-font);
+    font-size: 23px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.form-heading > span {
+    color: #927648;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.form-heading h3 {
+    margin-top: 3px;
+
+    color: #252119;
+    font-family: var(--heading-font);
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.form-heading p {
+    margin-top: 2px;
+    color: #837969;
+    font-size: 10px;
+}
+
+
+/* FORM PROGRESS */
+
+.form-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9px;
+
+    margin-bottom: 25px;
+}
+
+.progress-step {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #9c9385;
+    white-space: nowrap;
+}
+
+.progress-step > span {
+    display: grid;
+    place-items: center;
+
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid #cfc4b1;
+    border-radius: 50%;
+
+    font-size: 9px;
+}
+
+.progress-step small {
+    font-size: 9px;
+}
+
+.progress-step.active {
+    color: #745b32;
+}
+
+.progress-step.active > span {
+    color: white;
+    background: #a18452;
+    border-color: #a18452;
+}
+
+.progress-step.completed > span {
+    color: white;
+    background: #6d795d;
+    border-color: #6d795d;
+}
+
+.progress-track {
+    flex: 1;
+    height: 2px;
+    background: #d9d0c1;
+    overflow: hidden;
+}
+
+.progress-track span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: #a18452;
+}
+
+
+/* FORM STEPS */
+
+.form-step {
+    
+}
+
+.form-step.active {
+    
+}
+
+.review-step.active {
+    
+}
+.form-step-heading {
+    margin-bottom: 20px;
+}
+
+.form-step-heading > span {
+    color: #a18452;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.form-step-heading h4 {
+    margin-top: 6px;
+
+    color: #28241e;
+    font-family: var(--heading-font);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.form-step-heading p {
+    margin-top: 4px;
+    color: #837969;
+    font-size: 10px;
+}
+
+
+/* FORM FIELDS */
+
+.form-field {
+    margin-bottom: 16px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #554c3d;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.form-field label span {
+    color: #999081;
+    font-weight: 300;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 45px;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    border: 1px solid rgba(135,116,85,0.24);
+    border-radius: 11px;
+
+    box-shadow:
+        inset 0 2px 5px rgba(60,45,25,0.035),
+        0 2px 5px rgba(255,255,255,0.08);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.registration-card .input-wrapper:focus-within {
+    background: transparent !important;
+    background-color: transparent !important;
+
+    border-color: rgba(232,209,160,0.75);
+
+    box-shadow:
+        0 0 0 3px rgba(201,166,107,0.12),
+        inset 0 1px 3px rgba(255,255,255,0.08);
+}
+
+
+.input-wrapper > i {
+    width: 16px;
+    height: 16px;
+    margin-left: 13px;
+    color: #a0875b;
+    flex-shrink: 0;
+}
+
+.input-wrapper input,
+.input-wrapper select,
+.input-wrapper textarea {
+    width: 100%;
+    min-width: 0;
+
+    padding: 12px 13px;
+
+    color: #342e24;
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    font-size: 11px;
+}
+
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder {
+    color: #aaa091;
+}
+
+.input-wrapper select {
+    cursor: pointer;
+}
+
+.input-wrapper select option {
+    color: #2b261e;
+}
+
+.textarea-wrapper {
+    align-items: flex-start;
+}
+
+.input-wrapper textarea {
+    resize: vertical;
+    min-height: 75px;
+}
+
+.field-error {
+    display: block;
+    min-height: 0;
+    margin-top: 5px;
+    color: #a13d35;
+    font-size: 9px;
+}
+
+.field-error:not(:empty) {
+    min-height: 12px;
+}
+
+
+/* FORM BUTTONS */
+
+.form-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 43px;
+    padding: 0 19px;
+
+    color: white;
+    background:
+        linear-gradient(
+            135deg,
+            #927648,
+            #604b2d
+        );
+
+    border: 1px solid rgba(112,84,44,0.5);
+    border-radius: 11px;
+
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 16px rgba(90,68,36,0.19),
+        inset 0 1px 0 rgba(255,255,255,0.18);
+
+    transition:
+        transform 0.3s var(--ease),
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+.form-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.12);
+
+    box-shadow:
+        0 10px 22px rgba(90,68,36,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+.form-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.form-button i {
+    width: 14px;
+    height: 14px;
+}
+
+.next-button,
+.submit-button {
+    width: 100%;
+    margin-top: 17px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-actions .form-button {
+    flex: 1;
+}
+
+.back-button {
+    color: #68583e;
+    background: rgba(255,255,255,0.45);
+    border-color: rgba(135,116,85,0.25);
+    box-shadow: none;
+}
+
+
+/* REVIEW */
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    padding: 5px 16px;
+
+    background: rgba(255,255,255,0.4);
+    border: 1px solid rgba(135,116,85,0.2);
+    border-radius: 13px;
+}
+
+.review-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(135,116,85,0.15);
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-item span {
+    color: #897e6d;
+    font-size: 10px;
+}
+
+.review-item strong {
+    max-width: 60%;
+    color: #393126;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+
+/* CONSENT */
+
+.consent-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    margin-top: 19px;
+
+    color: #726756;
+    font-size: 10px;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.consent-field input {
+    margin-top: 2px;
+    accent-color: #927648;
+}
+
+
+/* SUCCESS */
+
+.form-success {
+    display: none;
+    padding: 28px 5px 12px;
+    text-align: center;
+}
+
+.form-success.active {
+    display: block;
+}
+
+.success-icon {
+    display: grid;
+    place-items: center;
+
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 19px;
+
+    color: white;
+    background: linear-gradient(145deg, #83916b, #566345);
+    border-radius: 50%;
+
+    box-shadow: 0 10px 25px rgba(86,99,69,0.22);
+}
+
+.success-icon i {
+    width: 28px;
+    height: 28px;
+}
+
+.form-success > span {
+    color: #8c754b;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.form-success h4 {
+    margin-top: 10px;
+    color: #302a20;
+    font-family: var(--heading-font);
+    font-size: 34px;
+}
+
+.form-success p {
+    max-width: 260px;
+    margin: 10px auto 22px;
+    color: #827866;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.form-success .form-button {
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE LOADER
+========================================================= */
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: #090909;
+    z-index: 9999;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.loader-logo {
+    color: var(--gold-light);
+    font-family: var(--heading-font);
+    font-size: 55px;
+}
+
+.loader-line {
+    width: 100px;
+    height: 1px;
+    background: var(--gold-dark);
+}
+
+.loader-text {
+    color: var(--muted);
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETS
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .main-interface {
+        grid-template-columns: 215px minmax(0, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .side-navigation {
+        padding: 23px 17px;
+    }
+
+ 
+.section-content {
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+}
+
+
+    .registration-card {
+        
+    }
+
+    .portrait-side-label {
+        right: 19px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .experience {
+        min-height: 100svh;
+        height: 100svh;
+    }
+
+    .main-interface {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .side-navigation {
+        flex-shrink: 0;
+
+        height: auto;
+        min-height: 69px;
+
+        padding: 10px 14px;
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        border-radius: 15px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .brand-symbol {
+        width: 37px;
+        height: 37px;
+        font-size: 19px;
+    }
+
+    .brand-details strong {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .brand-details small {
+        font-size: 7px;
+    }
+
+    .navigation-links {
+        flex-direction: row;
+        gap: 4px;
+        margin: 0;
+    }
+
+    .nav-heading {
+        display: none;
+    }
+
+    .nav-item {
+        justify-content: center;
+        width: 37px;
+        min-height: 37px;
+        padding: 0;
+        border-radius: 9px;
+    }
+
+    .nav-number {
+        display: none;
+    }
+
+    .nav-label {
+        font-size: 10px;
+    }
+
+    .nav-indicator {
+        display: none;
+    }
+
+    .navigation-footer {
+        display: none;
+    }
+
+    .portrait-stage {
+        flex: 1;
+        min-height: 0;
+        border-radius: 15px;
+    }
+
+    .portrait-frame {
+        inset: 11px;
+    }
+
+    .portrait-image {
+        object-position: center 30%;
+    }
+
+    .portrait-shade {
+        background:
+            linear-gradient(
+                0deg,
+                rgba(9,9,9,0.94) 0%,
+                rgba(9,9,9,0.55) 47%,
+                rgba(9,9,9,0.08) 100%
+            );
+    }
+
+    .portrait-side-label {
+        display: none;
+    }
+
+    .section-content {
+        
+        
+        
+        
+        
+    }
+
+    .content-eyebrow {
+        margin-bottom: 18px;
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .hero-title {
+        font-size: clamp(70px, 17vw, 110px);
+    }
+
+    .hero-title span {
+        font-size: 0.34em;
+        letter-spacing: 7px;
+        margin-top: 15px;
+    }
+
+    .hero-description {
+        max-width: 290px;
+        margin-top: 24px;
+        font-size: 11px;
+    }
+
+    .hero-date {
+        margin-top: 24px;
+    }
+
+    .date-day {
+        font-size: 49px;
+    }
+
+    .section-title {
+        font-size: clamp(42px, 10vw, 59px);
+    }
+
+    .section-description {
+        font-size: 11px;
+    }
+
+    .stage-footer {
+        left: 24px;
+        right: 24px;
+        bottom: 21px;
+    }
+
+    .stage-footer-left,
+    .stage-footer-right {
+        font-size: 7px;
+    }
+
+    .stage-footer-center {
+        font-size: 7px;
+    }
+
+    /* Mobile registration */
+
+    .registration-panel {
+        
+        
+        
+        
+        scrollbar-width: none;
+    }
+
+    .registration-panel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .registration-intro {
+        
+    }
+
+    .registration-intro .content-eyebrow {
+        margin-bottom: 8px;
+    }
+
+    .registration-intro .section-title {
+        font-size: 39px;
+    }
+
+    .registration-intro .section-description {
+        margin-top: 7px;
+        font-size: 10px;
+    }
+
+    .form-scene {
+        
+    }
+
+    .registration-card {
+        
+        border-radius: 18px;
+    }
+
+    .form-header {
+        margin-bottom: 17px;
+    }
+
+    .form-brand {
+        width: 39px;
+        height: 39px;
+        font-size: 20px;
+    }
+
+    .form-heading h3 {
+        font-size: 23px;
+    }
+
+    .form-progress {
+        gap: 5px;
+        margin-bottom: 19px;
+    }
+
+    .progress-step {
+        gap: 5px;
+    }
+
+    .progress-step > span {
+        width: 22px;
+        height: 22px;
+        font-size: 8px;
+    }
+
+    .progress-step small {
+        font-size: 8px;
+    }
+
+    .form-step-heading h4 {
+        font-size: 25px;
+    }
+
+    .form-field {
+        margin-bottom: 12px;
+    }
+
+    .input-wrapper {
+        min-height: 42px;
+    }
+
+    .input-wrapper input,
+    .input-wrapper select,
+    .input-wrapper textarea {
+        font-size: 10px;
+    }
+
+    .form-button {
+        min-height: 41px;
+        font-size: 9px;
+    }
+
+    .form-actions {
+        gap: 7px;
+    }
+
+    .review-item {
+        padding: 10px 0;
+    }
+
+    .review-item span,
+    .review-item strong {
+        font-size: 9px;
+    }
+
+    .decoration-one {
+        width: 49px;
+        height: 49px;
+        top: -20px;
+    }
+
+    .decoration-two {
+        width: 30px;
+        height: 30px;
+        left: -10px;
+    }
+
+    .decoration-three {
+        width: 24px;
+        height: 24px;
+        right: -10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .brand-details small {
+        display: none;
+    }
+
+    .brand-details strong {
+        letter-spacing: 1.5px;
+    }
+
+    .nav-item {
+        width: 32px;
+        min-height: 34px;
+    }
+
+    .nav-label {
+        font-size: 9px;
+    }
+
+    .registration-card {
+        
+    }
+
+    .progress-step small {
+        font-size: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+
+/* =========================================================
+   FO AUTHORITY — CINEMATIC FULL-SCREEN EXPERIENCE
+   Layout override
+========================================================= */
+
+/* Full-screen application */
+.experience {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.main-interface {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    gap: 0;
+}
+
+/* Full-screen portrait scene */
+.portrait-stage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    isolation: isolate;
+    border: none;
+    border-radius: 0;
+    background: var(--black);
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    will-change: transform, opacity;
+}
+
+/* Photograph fills the entire experience */
+.portrait-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    transform: scale(1.08);
+    will-change: transform, filter;
+}
+
+/* Cinematic image shading */
+.portrait-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 5, 5, 0.82) 0%,
+            rgba(5, 5, 5, 0.48) 35%,
+            rgba(5, 5, 5, 0.08) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5, 5, 5, 0.75) 0%,
+            transparent 42%,
+            rgba(5, 5, 5, 0.18) 100%
+        );
+}
+
+.portrait-vignette {
+    z-index: 2;
+}
+
+/* Remove the decorative frame around the photograph */
+.portrait-frame {
+    display: none;
+}
+
+/* Floating navigation — no panel, border or glass container */
+.side-navigation {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 30;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 245px;
+    height: 100%;
+    min-width: 0;
+    padding: 35px 25px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    pointer-events: none;
+}
+
+.brand,
+.navigation-links {
+    pointer-events: auto;
+}
+
+.brand {
+    gap: 12px;
+}
+
+/* Simplify the brand emblem */
+.brand-symbol {
+    border-radius: 50%;
+    background: rgba(201, 166, 107, 0.08);
+}
+
+/* Navigation floats freely */
+.navigation-links {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin: auto 0;
+}
+
+.nav-heading {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.nav-item {
+    min-height: 38px;
+    padding: 0;
+    gap: 13px;
+
+    color: rgba(255, 255, 255, 0.65);
+    background: transparent !important;
+
+    border: none !important;
+    border-radius: 0;
+
+    transition:
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.nav-item::before {
+    display: none;
+}
+
+.nav-item:hover {
+    color: var(--ivory);
+    background: transparent !important;
+    transform: translateX(6px);
+}
+
+.nav-item.active {
+    color: var(--gold-light);
+    background: transparent !important;
+    border: none !important;
+}
+
+.nav-number {
+    font-family: var(--heading-font);
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.nav-item.active .nav-number {
+    color: var(--gold-light);
+}
+
+.nav-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.nav-indicator {
+    display: none;
+}
+
+/* Navigation footer without divider */
+.navigation-footer {
+    border: none;
+    padding-top: 0;
+    pointer-events: none;
+}
+
+/* Main content stays above the background */
+.section-content {
+    z-index: 5;
+}
+
+.stage-footer {
+    z-index: 6;
+}
+
+/* Make sure registration remains readable */
+.registration-panel {
+    
+    
+    scrollbar-width: none;
+}
+
+.registration-panel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Remove the old portrait hover animation */
+.portrait-stage:hover .portrait-image {
+    transform: none;
+}
+
+/* =========================================================
+   MOBILE LAYOUT
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .main-interface {
+        display: block;
+        padding: 0;
+    }
+
+    .side-navigation {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 30;
+
+        width: 100%;
+        height: auto;
+        min-height: 0;
+
+        padding: 17px 18px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        background: transparent;
+        border: none;
+        border-radius: 0;
+    }
+
+    .brand-symbol {
+        width: 35px;
+        height: 35px;
+    }
+
+    .navigation-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: clamp(8px, 3vw, 17px);
+        margin: 0;
+    }
+
+    .nav-item {
+        width: auto;
+        min-height: 35px;
+        padding: 0;
+        gap: 0;
+    }
+
+    .nav-label {
+        font-size: 8px;
+        letter-spacing: 0.7px;
+    }
+
+    .navigation-footer {
+        display: none;
+    }
+
+    .portrait-stage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 0;
+    }
+
+    .section-content {
+        
+        
+        
+        
+        
+    }
+
+    .registration-panel {
+        
+    }
+
+    .stage-footer {
+        bottom: 20px;
+    }
+}
+
+/* Smaller screens */
+@media (max-width: 390px) {
+
+    .side-navigation {
+        padding: 14px 12px;
+    }
+
+    .brand-details small {
+        display: none;
+    }
+
+    .navigation-links {
+        gap: 9px;
+    }
+
+    .nav-label {
+        font-size: 7px;
+    }
+}
+
+/* Avoid conflicting old CSS animations during GSAP transitions */
+.portrait-image {
+    animation: none;
+}.content-panel.active {
+    animation: none;
+}
+
+
+/* FULL-SCREEN 3D SCENE VIEWPORT */
+
+.scene-viewport {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+
+    perspective: 1600px;
+    perspective-origin: center center;
+    transform-style: preserve-3d;
+
+    z-index: 1;
+}
+
+
+
+/* =========================================
+   FO AUTHORITY — RIGHT SIDE CONTENT LAYOUT
+========================================= */
+
+@media (min-width: 701px) {
+
+    .section-content {
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+
+        z-index: 5;
+    }
+
+    .content-panel:not(.registration-panel) {
+        
+        
+        
+        
+    }
+
+    .registration-panel {
+        
+        
+        
+        
+    }
+
+    .registration-card {
+        
+        
+        
+        
+    }
+
+}
+
+/* TABLET CONTENT POSITION */
+
+@media (min-width: 701px) and (max-width: 1050px) {
+
+    .section-content {
+        
+        
+    }
+
+}
+
+
+
+/* =========================================================
+   FO AUTHORITY — FINAL ZOOM CAROUSEL COMPATIBILITY
+   Removes old 3D effects and supports directional zoom
+========================================================= */
+
+/* Keep the entire experience flat — no card flipping */
+.scene-viewport, .portrait-stage {
+    perspective: none !important;
+    transform-style: flat !important;
+    backface-visibility: visible !important;
+}.section-content, .content-panel, .form-scene, .registration-card, .form-step {
+    
+    
+    
+}
+
+/* Full-screen portrait stage */
+.portrait-stage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform-origin: center center;
+    will-change: transform, opacity, filter;
+}
+
+/* Portrait image remains inside the stage */
+.portrait-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.portrait-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    transform-origin: center center;
+    transition: none !important;
+    will-change: transform, opacity, filter;
+}
+
+/* Prevent old hover effects from interfering */
+.portrait-stage:hover .portrait-image {
+    transform: scale(1.08);
+}
+
+/* Content panels are animated by the carousel JavaScript */
+.content-panel {
+    
+    
+    opacity: 0;
+    filter: blur(0);
+    will-change: transform, opacity, filter;
+}
+
+.content-panel.active {
+    
+    animation: none !important;
+}
+
+/* Keep text animations from competing with section transitions */
+.content-panel.active *,
+.content-panel.active *::before,
+.content-panel.active *::after {
+    animation: none !important;
+}
+
+/* Preserve the desktop right-aligned content layout */
+@media (min-width: 701px) {
+    .section-content {
+        
+        
+        
+        
+        
+        
+        
+    }
+
+    .content-panel:not(.registration-panel) {
+        
+        
+        
+    }
+
+    .registration-panel {
+        
+        
+        
+    }
+}
+
+/* Keep the registration card visually intact without 3D */
+.registration-card {
+    
+    
+    
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    .section-content {
+        
+        
+        
+        
+        
+        
+        
+    }
+
+    .registration-panel {
+        
+        
+        scrollbar-width: none;
+    }
+
+    .registration-panel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .portrait-stage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .portrait-stage, .portrait-image {
+        transition: none !important;
+    }.content-panel {
+        transition: none !important;
+    }
+}
+
+
+/* FO AUTHORITY — RIGHT POSITIONING */
+
+.content-panel {
+    
+}
+
+@media (max-width: 768px) {
+    .content-panel {
+        
+    }
+}
+
+
+
+/* =========================================================
+   FO AUTHORITY — GOLD SECTION INDICATOR
+========================================================= */
+
+.stage-footer-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+}
+
+.stage-footer-center #currentSectionLabel {
+    color: #f4d99b;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.stage-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background: #e7bd72;
+    box-shadow:
+        0 0 6px #e7bd72,
+        0 0 14px rgba(231, 189, 114, 0.8),
+        0 0 24px rgba(231, 189, 114, 0.5);
+    animation: stageGoldGlow 1.8s ease-in-out infinite;
+}
+
+@keyframes stageGoldGlow {
+    0%, 100% {
+        opacity: 0.75;
+        box-shadow:
+            0 0 5px #e7bd72,
+            0 0 12px rgba(231, 189, 114, 0.6);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow:
+            0 0 9px #e7bd72,
+            0 0 20px rgba(231, 189, 114, 0.95),
+            0 0 32px rgba(231, 189, 114, 0.65);
+    }
+}
+
+
+
+/* Move footer-left text slightly to the right */
+.stage-footer-left {
+    position: relative;
+    left: 90px;
+}
+
+
+
+/* =========================================================
+   FO AUTHORITY — TRANSPARENT LIQUID GLASS INPUT SYSTEM
+========================================================= */
+
+/* FIELD LABELS */
+
+.registration-card .form-field label {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* INPUT FIELD WRAPPERS */
+
+.registration-card .input-wrapper {
+    background: rgba(255, 255, 255, 0.045) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 12px;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.09),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.08);
+
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* INPUTS, SELECTS AND TEXTAREAS */
+
+.registration-card input,
+.registration-card select,
+.registration-card textarea {
+    width: 100%;
+
+    color: #ffffff !important;
+    background: transparent !important;
+
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    font-family: var(--body-font);
+}
+
+/* PLACEHOLDER TEXT */
+
+.registration-card input::placeholder,
+.registration-card textarea::placeholder {
+    color: rgba(255, 255, 255, 0.48);
+}
+
+/* SELECT OPTIONS */
+
+.registration-card select option {
+    color: #ffffff;
+    background: #171513;
+}
+
+/* FIELD FOCUS */
+
+.registration-card .input-wrapper:focus-within {
+    background: rgba(255, 255, 255, 0.09) !important;
+
+    border-color: rgba(232, 209, 160, 0.75);
+
+    box-shadow:
+        0 0 0 3px rgba(201, 166, 107, 0.12),
+        inset 0 1px 3px rgba(255, 255, 255, 0.13);
+}
+
+/* DIRECT FIELD FOCUS FALLBACK */
+
+.registration-card input:focus,
+.registration-card select:focus,
+.registration-card textarea:focus {
+    outline: none;
+}
+
+
+
+
+#section-registration .input-wrapper input:-webkit-autofill,
+#section-registration .input-wrapper input:-webkit-autofill:hover,
+#section-registration .input-wrapper input:-webkit-autofill:focus,
+#section-registration .input-wrapper input:-webkit-autofill:active {
+
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    transition: background-color 999999s ease-in-out 0s !important;
+}
+
+/* AUTOFILL APPEARANCE
+
+.registration-card input:-webkit-autofill,
+.registration-card input:-webkit-autofill:hover,
+.registration-card input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 999999s ease-in-out 0s;
+} */
+
+/* SELECT ARROW COLOUR */
+
+.registration-card select {
+    color-scheme: dark;
+}
+
+/* OPTIONAL MESSAGE FIELD */
+
+.registration-card textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+
+
+/* =========================================================
+   FO AUTHORITY — PORTRAIT LIQUID GLASS REGISTRATION
+========================================================= */
+
+/* MAIN REGISTRATION LAYOUT */
+
+
+#section-registration {
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+    
+
+    
+}
+
+#section-registration .registration-intro {
+    
+    
+
+    
+    
+
+    text-align: left;
+}
+
+#section-registration .form-scene {
+    
+    
+
+    
+
+    
+    
+    
+
+    
+}
+
+#section-registration .registration-card {
+    
+    
+    
+    
+    
+}
+
+
+/* GLASS EDGE EMBOSSING */
+
+#section-registration .registration-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 5px;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 26px;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* VIDEO FOLLOWS PORTRAIT SHAPE */
+
+#section-registration .liquid-glass-background {
+    border-radius: inherit;
+}
+
+/* COMPACT FORM SPACING */
+
+#section-registration .form-header {
+    margin-bottom: 12px;
+}
+
+#section-registration .form-progress {
+    margin-bottom: 14px;
+}
+
+#section-registration .form-step-heading {
+    margin-bottom: 12px;
+}
+
+#section-registration .form-field {
+    margin-bottom: 10px;
+}
+
+#section-registration .input-wrapper {
+    min-height: 43px;
+}
+
+#section-registration textarea {
+    min-height: 65px;
+    max-height: 80px;
+}
+
+/* FORM BUTTONS */
+
+#section-registration .form-actions {
+    margin-top: 12px;
+}
+
+/* REMOVE SCROLLING */
+
+#section-registration,
+#section-registration .form-scene,
+#section-registration .registration-card,
+#section-registration #guestRegistrationForm {
+    scrollbar-width: none !important;
+}
+
+#section-registration::-webkit-scrollbar,
+#section-registration .form-scene::-webkit-scrollbar,
+#section-registration .registration-card::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* =========================================================
+   TABLET AND MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    #section-registration {
+        
+        
+
+        
+    }
+
+    #section-registration .form-scene {
+        
+        
+    }
+
+    #section-registration .registration-card {
+        
+        
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #section-registration {
+        
+        
+
+        
+
+        
+    }
+
+    #section-registration .registration-intro {
+        
+        
+    }
+
+    #section-registration .form-scene {
+        
+        
+        
+    }
+
+    #section-registration .registration-card {
+        
+        
+
+        
+        
+
+        border-radius: 26px;
+    }
+
+}
+
+
+
+/* =========================================================
+   FO AUTHORITY — REGISTRATION INTRODUCTION
+========================================================= */
+
+#section-registration .registration-intro {
+    
+    
+    
+    
+
+    text-align: left;
+
+    
+    
+
+    
+    
+}
+
+/* INVITATION LABEL */
+
+#section-registration .intro-eyebrow {
+    
+
+    
+
+    color: var(--gold-light);
+
+    font-family: var(--body-font);
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.32em;
+    line-height: 1.5;
+}
+
+/* MAIN HEADING */
+
+#section-registration .intro-title {
+    
+    
+    
+
+    
+
+    color: var(--ivory);
+
+    font-family: var(--heading-font);
+    font-size: clamp(48px, 5.2vw, 76px);
+    font-weight: 400;
+
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+}
+
+/* EMPHASISED PLACE */
+
+#section-registration .intro-title span {
+    color: var(--gold-light);
+
+    font-style: italic;
+    font-weight: 400;
+
+    margin-top: 5px;
+}
+
+/* SUPPORTING DESCRIPTION */
+
+#section-registration .intro-description {
+    
+
+    
+
+    color: rgba(244, 239, 229, 0.72);
+
+    font-family: var(--body-font);
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.9;
+    letter-spacing: 0.025em;
+}
+
+/* MOBILE TYPOGRAPHY */
+
+@media (max-width: 600px) {
+
+    #section-registration .registration-intro {
+        
+        
+    }
+
+    #section-registration .intro-eyebrow {
+        
+        font-size: 9px;
+    }
+
+    #section-registration .intro-title {
+        font-size: clamp(34px, 9vw, 46px);
+        line-height: 0.95;
+    }
+
+    #section-registration .intro-description {
+        
+        
+
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+}
+
+
+
+/* =========================================================
+   FO AUTHORITY — DEFINITIVE REGISTRATION LAYOUT
+   Left editorial text + right portrait glass form
+========================================================= */
+
+/* DESKTOP CONTENT STAGE */
+
+@media (min-width: 701px) {
+
+    .section-content {
+        
+
+        
+        
+
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        
+        z-index: 10;
+    }
+
+    /* KEEP OTHER NAVIGATION SECTIONS UNCHANGED */
+
+    .content-panel:not(#section-registration).active {
+        
+    }
+
+    /* REGISTRATION TWO-COLUMN LAYOUT */
+
+    #section-registration,
+    #section-registration.content-panel,
+    #section-registration.content-panel.active {
+        
+
+        
+        
+
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        opacity: 1;
+        
+
+        
+    }
+
+    /* LEFT COLUMN — INVITATION TEXT */
+
+    #section-registration .registration-intro {
+        
+        
+
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+
+        text-align: left;
+    }
+
+    #section-registration .intro-eyebrow {
+        
+
+        color: var(--gold-light);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.32em;
+    }
+
+    #section-registration .intro-title {
+        
+        
+        
+
+        
+
+        color: var(--ivory);
+        font-family: var(--heading-font);
+        font-size: clamp(48px, 5vw, 76px);
+        font-weight: 400;
+
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+    }
+
+    #section-registration .intro-title span {
+        margin-top: 5px;
+
+        color: var(--gold-light);
+        font-style: italic;
+    }
+
+    #section-registration .intro-description {
+        
+
+        
+
+        color: rgba(244, 239, 229, 0.72);
+        font-family: var(--body-font);
+        font-size: 13px;
+
+        line-height: 1.9;
+    }
+
+    /* RIGHT COLUMN — PORTRAIT FORM */
+
+    #section-registration .form-scene {
+        
+        
+
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        
+    }
+
+    #section-registration .registration-card {
+        
+        
+
+        
+        
+
+        
+        
+
+        border-radius: 30px;
+
+        
+
+        box-shadow:
+            0 35px 80px rgba(0, 0, 0, 0.50),
+            0 12px 25px rgba(0, 0, 0, 0.30),
+            inset 0 2px 3px rgba(255, 255, 255, 0.32),
+            inset 0 -3px 8px rgba(0, 0, 0, 0.20);
+    }
+
+    /* KEEP VIDEO INSIDE THE PORTRAIT CARD */
+
+    #section-registration .liquid-glass-background,
+    #section-registration .liquid-glass-video,
+    #section-registration .liquid-glass-overlay {
+        border-radius: inherit;
+    }
+
+    /* INTRODUCTION SHOULD NOT BE PUSHED DOWN */
+
+    #section-registration .registration-intro {
+        
+    }
+
+}
+
+
+/* =========================================================
+   TABLET — BALANCED TWO-COLUMN VERSION
+========================================================= */
+
+@media (min-width: 701px) and (max-width: 1050px) {
+
+    .section-content {
+        
+        
+    }
+
+    #section-registration,
+    #section-registration.content-panel.active {
+        
+
+        
+
+        
+    }
+
+    #section-registration .form-scene {
+        
+    }
+
+    #section-registration .registration-card {
+        
+    }
+
+    #section-registration .intro-title {
+        font-size: clamp(42px, 5vw, 58px);
+    }
+
+    #section-registration .intro-description {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE — STACKED LAYOUT
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .section-content {
+        
+        
+
+        
+        
+
+        
+        
+
+        
+
+        
+        
+    }
+
+    #section-registration,
+    #section-registration.content-panel.active {
+        
+
+        
+        
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+
+        
+    }
+
+    #section-registration .registration-intro {
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        text-align: left;
+    }
+
+    #section-registration .intro-eyebrow {
+        
+        font-size: 8px;
+    }
+
+    #section-registration .intro-title {
+        font-size: clamp(32px, 8vw, 43px);
+        line-height: 0.95;
+    }
+
+    #section-registration .intro-description {
+        
+
+        
+
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    #section-registration .form-scene {
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+        
+
+        
+    }
+
+    #section-registration .registration-card {
+        
+        
+
+        
+        
+
+        
+
+        border-radius: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   REMOVE OLD REGISTRATION POSITIONING CONFLICTS
+========================================================= */
+
+#section-registration,
+#section-registration .registration-intro,
+#section-registration .form-scene,
+#section-registration .registration-card {
+    
+}
+
+#section-registration .registration-intro,
+#section-registration .form-scene {
+    
+    
+    
+    
+}
+
+#section-registration .registration-card {
+    
+}
+
+#section-registration .form-header,
+#section-registration .form-step-heading,
+#section-registration .form-progress,
+#section-registration .form-field,
+#section-registration .form-actions {
+    color: var(--ivory);
+}
+
+
+
+/* LIQUID GLASS FORM TYPOGRAPHY */
+
+#section-registration .form-heading h3,
+#section-registration .form-step-heading h4 {
+    color: var(--ivory);
+    font-weight: 400;
+}
+
+#section-registration .form-heading > span,
+#section-registration .form-step-heading > span {
+    color: var(--gold-light);
+}
+
+#section-registration .form-heading p,
+#section-registration .form-step-heading p {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+#section-registration .form-field label {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+#section-registration .progress-step {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+#section-registration .progress-step.active {
+    color: var(--gold-light);
+}
+
+#section-registration .progress-step > span {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+#section-registration .progress-track {
+    background: rgba(255, 255, 255, 0.20);
+}
+
+
+/* INCREASE REGISTRATION FORM HEIGHT */
+@media (min-width: 701px) {
+    #section-registration .form-scene {
+        
+    }
+
+    #section-registration .registration-card {
+        
+        
+    }
+}
+
+@media (max-width: 700px) {
+    #section-registration .form-scene {
+        
+    }
+
+    #section-registration .registration-card {
+        
+    }
+}
+
+
+/* SHIFT INPUT TEXT, PLACEHOLDERS AND ICONS RIGHT BY 5% */
+#section-registration .form-field input,
+#section-registration .form-field select,
+#section-registration .form-field textarea {
+    padding-left: calc(5% + 12px) !important;
+}
+
+#section-registration .form-field .field-icon,
+#section-registration .form-field .input-icon {
+    left: 5% !important;
+}
+
+/* FORCE MOVE LUCIDE INPUT ICONS */
+#section-registration .input-wrapper > i[data-lucide],
+#section-registration .input-wrapper > svg {
+    position: absolute !important;
+    left: 2% !important;
+    right: auto !important;
+    margin-left: 0 !important;
+    transform: none !important;
+    pointer-events: none;
+}
+
+
+/* ALIGN PLACEHOLDER AND TYPED TEXT */
+#section-registration .input-wrapper input {
+    padding-left: 11% !important;
+    box-sizing: border-box;
+}
+
+#section-registration .input-wrapper input::placeholder {
+    padding-left: 4px !important;
+}
+
+
+
+/* CORRECT VERTICAL ALIGNMENT OF MAIN CONTENT */
+/* #section-welcome .section-content, */
+#section-about .section-content,
+#section-celebration .section-content {
+    top: calc(50% + 35px) !important;
+    transform: translateY(-50%) !important;
+}
+
+/* MOVE ONLY WELCOME, ABOUT AND CELEBRATION CONTENT */
+/* #section-welcome
+{
+    translate: 0 220px !important;
+} */
+/* #section-about {
+    translate: 0 200px !important;
+} */
+/* #section-celebration {
+    translate: 0 220px !important;
+} */
+
+/* =====================================================
+   CONTACT PAGE — VERTICAL ALIGNMENT
+===================================================== */
+
+#section-contact {
+    translate: 0 -250px !important;
+}
+
+/* =====================================================
+   FO AUTHORITY — TRANSPARENT INPUT BACKGROUND
+===================================================== */
+
+#section-registration .input-wrapper input,
+#section-registration .input-wrapper input:focus,
+#section-registration .input-wrapper input:active,
+#section-registration .input-wrapper textarea,
+#section-registration .input-wrapper select {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: inherit !important;
+    outline: none !important;
+}
+
+/* REMOVE CHROME AUTOFILL WHITE BACKGROUND */
+/* #section-registration .input-wrapper input:-webkit-autofill,
+#section-registration .input-wrapper input:-webkit-autofill:hover,
+#section-registration .input-wrapper input:-webkit-autofill:focus,
+#section-registration .input-wrapper input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: inherit !important;
+    caret-color: inherit !important;
+    transition: background-color 999999s ease-in-out 0s;
+} */
+
+/* =====================================================
+   FO AUTHORITY — FORCE LIQUID GLASS AUTOFILL
+===================================================== */
+
+/* #section-registration .input-wrapper input,
+#section-registration .input-wrapper input:focus,
+#section-registration .input-wrapper input:-webkit-autofill,
+#section-registration .input-wrapper input:-webkit-autofill:hover,
+#section-registration .input-wrapper input:-webkit-autofill:focus,
+#section-registration .input-wrapper input:-webkit-autofill:active {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0) inset !important;
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0) inset !important;
+
+    -webkit-text-fill-color: #24102F !important;
+    color: #f2f0f3 !important;
+
+    transition: background-color 999999s ease-in-out 0s !important;
+    caret-color: #e9e2ec !important;
+} */
+
+/* RESTORE INPUT TEXT AND PLACEHOLDER COLOURS */
+#section-registration .input-wrapper input,
+#section-registration .input-wrapper input:focus {
+    color: #090909 !important;
+    -webkit-text-fill-color: #090909 !important;
+}
+
+#section-registration .input-wrapper input::placeholder {
+    color: rgba(9, 9, 9, 0.55) !important;
+    opacity: 1 !important;
+}
+
+/* KEEP AUTOFILLED TEXT THE SAME COLOUR */
+/* #section-registration .input-wrapper input:-webkit-autofill,
+#section-registration .input-wrapper input:-webkit-autofill:hover,
+#section-registration .input-wrapper input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #090909 !important;
+} */
+
+/* #section-welcome, */
+/* #section-welcome.content-panel,
+#section-welcome.content-panel.active {
+    translate: 0 0 !important;
+}
+
+
+/* =========================================================
+   FO AUTHORITY — FINAL REGISTRATION LAYOUT OVERRIDE
+   Desktop: Editorial text + Portrait glass form
+   Tablet/Mobile: Fixed compact stacked layout
+========================================================= */
+
+#section-registration * {
+    box-sizing: border-box;
+}#section-registration {
+    
+}
+
+/* =========================================================
+   DESKTOP — TWO COLUMN LAYOUT
+========================================================= */
+
+@media (min-width: 901px) {
+
+    .section-content {
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        
+        z-index: 10;
+    }
+
+    #section-registration,
+    #section-registration.content-panel,
+    #section-registration.content-panel.active {
+
+        
+
+        
+        
+
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+    }
+
+    /* LEFT — INVITATION */
+
+    #section-registration .registration-intro {
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        text-align: left;
+    }
+
+    #section-registration .intro-eyebrow {
+        
+        font-size: 10px;
+        letter-spacing: 0.32em;
+    }
+
+    #section-registration .intro-title {
+        font-size: clamp(44px, 5vw, 76px);
+        line-height: 0.95;
+    }
+
+    #section-registration .intro-description {
+        
+        
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    /* RIGHT — FORM SCENE */
+
+    #section-registration .form-scene {
+        
+        
+
+        
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+        
+
+        
+    }
+
+    /* PORTRAIT GLASS CARD */
+
+    #section-registration .registration-card {
+        
+        
+        
+        
+
+        
+        
+
+        border-radius: 30px;
+        
+
+        box-shadow:
+            0 35px 80px rgba(0, 0, 0, 0.50),
+            0 12px 25px rgba(0, 0, 0, 0.30),
+            inset 0 2px 3px rgba(255, 255, 255, 0.32),
+            inset 0 -3px 8px rgba(0, 0, 0, 0.20);
+    }
+
+    #section-registration .liquid-glass-background,
+    #section-registration .liquid-glass-video,
+    #section-registration .liquid-glass-overlay {
+        border-radius: inherit;
+    }
+}
+
+
+/* =========================================================
+   TABLET — STACKED FIXED LAYOUT
+========================================================= */
+
+@media (min-width: 701px) and (max-width: 900px) {
+
+    .section-content {
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        
+    }
+
+    #section-registration,
+    #section-registration.content-panel.active {
+        
+
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+    }
+
+    #section-registration .registration-intro {
+        
+        
+
+        
+        
+        
+        
+    }
+
+    #section-registration .intro-eyebrow {
+        
+        font-size: 9px;
+    }
+
+    #section-registration .intro-title {
+        font-size: clamp(34px, 5vw, 45px);
+        line-height: 0.95;
+    }
+
+    #section-registration .intro-description {
+        
+        
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    #section-registration .form-scene {
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+    }
+
+    #section-registration .registration-card {
+        
+        
+        
+
+        
+        border-radius: 24px;
+
+        
+    }
+}
+
+
+/* =========================================================
+   MOBILE — COMPACT FIXED LAYOUT
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .section-content {
+        
+
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        
+    }
+
+    #section-registration,
+    #section-registration.content-panel,
+    #section-registration.content-panel.active {
+
+        
+
+        
+        
+
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+    }
+
+    /* INVITATION TEXT */
+
+    #section-registration .registration-intro {
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+    }
+
+    #section-registration .intro-eyebrow {
+        
+        font-size: 8px;
+        letter-spacing: 0.25em;
+    }
+
+    #section-registration .intro-title {
+        font-size: clamp(32px, 8vw, 43px);
+        line-height: 0.94;
+    }
+
+    #section-registration .intro-description {
+        
+        
+
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    /* FORM SCENE */
+
+    #section-registration .form-scene {
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        
+    }
+
+    /* PORTRAIT CARD */
+
+    #section-registration .registration-card {
+        
+        
+        
+        
+
+        
+        
+
+        border-radius: 23px;
+        
+    }
+
+    /* COMPACT FORM SPACING */
+
+    #section-registration .form-header {
+        margin-bottom: 10px;
+    }
+
+    #section-registration .form-brand {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    #section-registration .form-heading h3 {
+        font-size: 21px;
+    }
+
+    #section-registration .form-heading p {
+        font-size: 9px;
+    }
+
+    #section-registration .form-progress {
+        gap: 5px;
+        margin-bottom: 12px;
+    }
+
+    #section-registration .progress-step {
+        gap: 4px;
+    }
+
+    #section-registration .progress-step > span {
+        width: 20px;
+        height: 20px;
+    }
+
+    #section-registration .progress-step small {
+        font-size: 7px;
+    }
+
+    #section-registration .form-step-heading {
+        margin-bottom: 9px;
+    }
+
+    #section-registration .form-step-heading h4 {
+        font-size: 23px;
+    }
+
+    #section-registration .form-step-heading p {
+        font-size: 9px;
+    }
+
+    #section-registration .form-field {
+        margin-bottom: 9px;
+    }
+
+    #section-registration .input-wrapper {
+        min-height: 39px;
+    }
+
+    #section-registration .input-wrapper input,
+    #section-registration .input-wrapper select,
+    #section-registration .input-wrapper textarea {
+        padding-top: 9px;
+        padding-bottom: 9px;
+        font-size: 10px;
+    }
+
+    #section-registration .form-button {
+        min-height: 38px;
+        font-size: 9px;
+    }
+
+    #section-registration .next-button,
+    #section-registration .submit-button {
+        margin-top: 10px;
+    }
+
+    #section-registration .form-actions {
+        margin-top: 10px;
+    }
+
+    /* DISABLE FORM AND PAGE SCROLLING */
+
+    #section-registration,
+    #section-registration .form-scene,
+    #section-registration .registration-card,
+    #section-registration #guestRegistrationForm {
+        
+        scrollbar-width: none !important;
+    }
+
+    #section-registration::-webkit-scrollbar,
+    #section-registration .registration-card::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .stage-footer {
+        bottom: 20px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE SCREENS
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .section-content {
+        
+        
+    }
+
+    #section-registration {
+        
+    }
+
+    #section-registration .intro-title {
+        font-size: 32px;
+    }
+
+    #section-registration .intro-description {
+        font-size: 9px;
+    }
+
+    #section-registration .registration-card {
+        
+        border-radius: 19px;
+    }
+
+    #section-registration .form-header {
+        margin-bottom: 8px;
+    }
+
+    #section-registration .form-progress {
+        margin-bottom: 9px;
+    }
+}
+
+
+
+/* =====================================================
+   WELCOME SECTION — CORRECT VERTICAL POSITION
+===================================================== */
+
+/* Position the main content container */
+#sectionContent {
+    top: calc(50% + 40px) !important;
+    bottom: auto !important;
+    transform: translateY(-30%) !important;
+}
+
+/* Prevent unwanted movement of the welcome panel */
+/* #section-welcome,
+#section-welcome.content-panel,
+#section-welcome.content-panel.active {
+    position: relative;
+    top: auto !important;
+    bottom: auto !important;
+    translate: 0 0 !important;
+} */
+
+/* =====================================================
+   WELCOME PAGE — MATCH NAVIGATION PAGE TYPOGRAPHY
+===================================================== */
+
+#section-welcome .content-eyebrow {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: var(--gold-light);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+#section-welcome .hero-title {
+    display: flex;
+    flex-direction: column;
+    color: var(--ivory);
+    font-family: var(--heading-font);
+    font-size: clamp(42px, 5.5vw, 75px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: normal;
+}
+
+#section-welcome .hero-title span {
+    display: block;
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+#section-welcome .hero-description {
+    max-width: 400px;
+    margin-top: 24px;
+    color: rgba(244,239,229,0.77);
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.9;
+}
+
+#section-welcome .hero-date {
+    margin-top: 24px;
+}
+
+/* =====================================================
+   FO AUTHORITY — NAVIGATION CONTENT POSITION & SIZE
+===================================================== */
+
+/* Restore the shared content container to the centre */
+#sectionContent {
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+}
+
+/* Remove old individual navigation page offsets */
+#section-welcome,
+#section-about,
+#section-celebration,
+#section-contact {
+    translate: 0 0 !important;
+}
+
+/* Increase Welcome heading size */
+#section-welcome .hero-title {
+    font-size: clamp(65px, 8vw, 110px) !important;
+    line-height: 0.88;
+    letter-spacing: -2px;
+}
+
+/* Preserve the gold italic accent */
+#section-welcome .hero-title span {
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+/* =====================================================
+   FO AUTHORITY — INDIVIDUAL NAVIGATION PAGE POSITIONING
+===================================================== */
+
+/* WELCOME PAGE */
+#section-welcome {
+    translate: 0 80% !important;
+}
+
+/* ABOUT PAGE */
+#section-about {
+    translate: 0 200px !important;
+}
+
+/* CELEBRATION PAGE */
+#section-celebration {
+    translate: 0 220px !important;
+}
+
+/* CONTACT PAGE */
+#section-contact {
+    translate: 0 -290px !important;
+}
+
+/* =====================================================
+   REGISTRATION FORM — TRANSPARENT LIQUID GLASS
+===================================================== */
+
+/* #section-registration .registration-card {
+    background: rgba(255, 255, 255, 0.01) !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
+
+    backdrop-filter: blur(2px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(2px) saturate(140%) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.20) !important;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.18),
+        inset 0 -1px 1px rgba(255, 255, 255, 0.05) !important;
+} */
+
+/* Keep the video visible behind the form */
+/* #section-registration .liquid-glass-background {
+    opacity: 1 !important;
+} */
+
+/* #section-registration .liquid-glass-video {
+    opacity: 1 !important;
+} */
+
+/* Remove solid backgrounds from inner form layers */
+/* #section-registration .form-header,
+#section-registration .form-progress,
+#section-registration .form-step,
+#section-registration .form-step-heading {
+    background: transparent !important;
+} */
+
+/* =====================================================
+   REGISTRATION FORM — WHITE INPUT TEXT & PLACEHOLDERS
+===================================================== */
+
+/* Typed input text */
+#section-registration .input-wrapper input,
+#section-registration .input-wrapper select,
+#section-registration .input-wrapper textarea {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+}
+
+/* Placeholder text */
+#section-registration .input-wrapper input::placeholder,
+#section-registration .input-wrapper textarea::placeholder {
+    color: rgba(255, 255, 255, 0.75) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.75) !important;
+    opacity: 1 !important;
+}
+
+/* Dropdown options */
+#section-registration .input-wrapper select option {
+    color: #ffffff !important;
+    background: #171417 !important;
+}
+
+/* Chrome autofill */
+/* #section-registration .input-wrapper input:-webkit-autofill,
+#section-registration .input-wrapper input:-webkit-autofill:hover,
+#section-registration .input-wrapper input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+    transition: background-color 999999s ease-in-out 0s;
+} */
+
+
+/* =========================================
+   FO AUTHORITY — STEP 02 ATTENDANCE DESIGN
+========================================= */
+
+#section-registration .attendance-step {
+    
+}
+
+/* ATTENDANCE COUNTER CONTAINER */
+
+#section-registration .attendance-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: 100%;
+    padding: 18px 20px;
+
+    margin-top: 24px;
+
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 13px;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.10),
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+/* COUNTER TEXT */
+
+#section-registration .attendance-counter-info h5 {
+    margin: 0 0 6px;
+
+    color: var(--ivory);
+    font-family: var(--heading-font);
+    font-size: 19px;
+    font-weight: 500;
+}
+
+#section-registration .attendance-counter-info p {
+    margin: 0;
+
+    color: rgba(244, 239, 229, 0.65);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* PLUS AND MINUS CONTROL */
+
+#section-registration .quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+
+#section-registration .quantity-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    color: var(--gold-light);
+    font-size: 20px;
+    font-weight: 400;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(231, 189, 114, 0.45);
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.12),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.3s ease;
+}
+
+#section-registration .quantity-btn:hover:not(:disabled) {
+    color: #090909;
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+#section-registration .quantity-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+#section-registration .quantity-value {
+    min-width: 18px;
+
+    color: var(--ivory);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ATTENDANCE SUMMARY */
+
+#section-registration .attendance-summary {
+    width: 100%;
+    margin-top: 16px;
+    padding: 17px 20px;
+
+    background: rgba(0, 0, 0, 0.19);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+#section-registration .attendance-summary-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+    color: rgba(244, 239, 229, 0.68);
+    font-size: 11px;
+}
+
+#section-registration .attendance-summary-row strong {
+    color: var(--ivory);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#section-registration .attendance-summary-divider {
+    width: 100%;
+    height: 1px;
+    margin: 14px 0;
+
+    background: rgba(231, 189, 114, 0.25);
+}
+
+#section-registration .attendance-total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+#section-registration .attendance-total-row strong {
+    font-family: var(--heading-font);
+    font-size: 27px;
+    font-weight: 500;
+}
+
+/* ADDITIONAL MESSAGE */
+
+#section-registration .attendance-message {
+    margin-top: 18px;
+}
+
+#section-registration .attendance-message label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--ivory);
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+#section-registration .attendance-message .input-wrapper {
+    position: relative;
+}
+
+#section-registration .attendance-message textarea {
+    width: 100%;
+    min-height: 75px;
+    padding: 13px 15px;
+
+    color: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    line-height: 1.6;
+
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+
+    outline: none;
+    resize: none;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: border-color 0.3s ease,
+                background 0.3s ease;
+}
+
+#section-registration .attendance-message textarea:focus {
+    border-color: var(--gold-light);
+    background: rgba(255, 255, 255, 0.075);
+}
+
+#section-registration .attendance-message textarea::placeholder {
+    color: rgba(255, 255, 255, 0.48);
+}
+
+/* BACK AND CONTINUE BUTTONS */
+
+#section-registration .attendance-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    width: 100%;
+    margin-top: 22px;
+}
+
+#section-registration .attendance-navigation .form-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-width: 125px;
+    min-height: 43px;
+    padding: 0 20px;
+
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transition: all 0.3s ease;
+}
+
+#section-registration .form-button-back {
+    color: var(--ivory);
+
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.12),
+        0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+#section-registration .form-button-next {
+    color: #17110A;
+
+    background: linear-gradient(
+        135deg,
+        #f4d99b,
+        #c8a45d
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.55),
+        0 6px 18px rgba(200, 164, 93, 0.20);
+}
+
+#section-registration .attendance-navigation .form-button:hover {
+    transform: translateY(-2px);
+}
+
+#section-registration .form-button-back:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--gold-light);
+}
+
+#section-registration .form-button-next:hover {
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.7),
+        0 9px 24px rgba(200, 164, 93, 0.32);
+}
+
+#section-registration .attendance-navigation .form-button i,
+#section-registration .attendance-navigation .form-button svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* MOBILE ADJUSTMENT */
+
+@media (max-width: 600px) {
+
+    #section-registration .attendance-counter {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    #section-registration .attendance-counter-info h5 {
+        font-size: 17px;
+    }
+
+    #section-registration .attendance-counter-info p {
+        max-width: 175px;
+        font-size: 9px;
+    }
+
+    #section-registration .attendance-counter .quantity-control {
+        gap: 9px;
+    }
+
+    #section-registration .attendance-navigation .form-button {
+        min-width: 0;
+        flex: 1;
+    }
+
+}
+
+
+/* =========================================
+   STEP 02 — FIT CONTENT INSIDE FORM CARD
+========================================= */
+
+#section-registration .attendance-step {
+    
+    
+    
+    
+    
+
+    
+    
+}
+
+/* STEP HEADING */
+
+#section-registration .attendance-step .form-step-heading {
+    margin-bottom: 10px;
+}
+
+#section-registration .attendance-step .form-step-heading > span {
+    font-size: 8px;
+}
+
+#section-registration .attendance-step .form-step-heading h4 {
+    margin: 5px 0;
+    font-size: 25px;
+    line-height: 1.05;
+}
+
+#section-registration .attendance-step .form-step-heading p {
+    margin: 4px 0 0;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+/* GUEST COUNTER */
+
+#section-registration .attendance-counter {
+    flex-shrink: 0;
+    margin-top: 10px;
+    padding: 12px 15px;
+}
+
+#section-registration .attendance-counter-info h5 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+#section-registration .attendance-counter-info p {
+    font-size: 9px;
+}
+
+/* COUNTER BUTTONS */
+
+#section-registration .quantity-btn {
+    width: 29px;
+    height: 29px;
+    font-size: 17px;
+}
+
+#section-registration .quantity-control {
+    gap: 9px;
+}
+
+/* ATTENDANCE SUMMARY */
+
+#section-registration .attendance-summary {
+    flex-shrink: 0;
+    margin-top: 10px;
+    padding: 11px 15px;
+}
+
+#section-registration .attendance-summary-row {
+    margin-bottom: 7px;
+    font-size: 10px;
+}
+
+#section-registration .attendance-summary-divider {
+    margin: 9px 0;
+}
+
+#section-registration .attendance-total-row {
+    font-size: 10px;
+}
+
+#section-registration .attendance-total-row strong {
+    font-size: 23px;
+}
+
+/* MESSAGE FIELD */
+
+#section-registration .attendance-message {
+    flex-shrink: 0;
+    margin-top: 11px;
+}
+
+#section-registration .attendance-message label {
+    margin-bottom: 5px;
+    font-size: 9px;
+}
+
+#section-registration .attendance-message textarea {
+    min-height: 55px;
+    height: 55px;
+    padding: 9px 12px;
+    font-size: 10px;
+}
+
+/* NAVIGATION */
+
+#section-registration .attendance-navigation {
+    flex-shrink: 0;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+#section-registration .attendance-navigation .form-button {
+    min-height: 37px;
+    font-size: 9px;
+}
+
+/* PREVENT CHILDREN FROM EXPANDING THE CARD */
+
+#section-registration .attendance-step *,
+#section-registration .attendance-step *::before,
+#section-registration .attendance-step *::after {
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   FORM STEP VISIBILITY FIX
+======================================== */
+
+/* Hide every inactive form section */
+.registration-card .form-step:not(.active) {
+    
+}
+
+/* Display the active form section */
+.registration-card .form-step.active {
+    
+}
+
+/* Preserve the attendance section's flex layout */
+.registration-card .attendance-step.active {
+    
+    
+}
+
+/* ========================================
+   STEP 03 — REVIEW REGISTRATION
+======================================== */
+
+.review-step {
+    
+}
+
+/* REVIEW CARD */
+
+.review-card {
+    width: 100%;
+    padding: 18px 20px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(161, 132, 82, 0.22);
+    border-radius: 15px;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.35),
+        0 5px 15px rgba(50, 40, 25, 0.045);
+}
+
+/* CARD HEADINGS */
+
+.review-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 13px;
+
+    color: #9b7945;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+}
+
+.review-card-heading i {
+    width: 14px;
+    height: 14px;
+    stroke-width: 1.7;
+}
+
+.attendance-review-heading {
+    margin-top: 17px;
+}
+
+/* REVIEW INFORMATION */
+
+.review-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid rgba(135, 116, 85, 0.12);
+}
+
+.review-item span,
+.review-message > span {
+    color: #817666;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.review-item strong {
+    max-width: 65%;
+
+    color: #302a22;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+/* DIVIDER */
+
+.review-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 15px 0;
+
+    background: rgba(161, 132, 82, 0.22);
+}
+
+/* TOTAL ATTENDEES */
+
+.review-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 13px;
+    padding: 12px 13px;
+
+    background: rgba(193, 159, 101, 0.12);
+
+    border: 1px solid rgba(161, 132, 82, 0.25);
+    border-radius: 9px;
+}
+
+.review-total span {
+    color: #514535;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.review-total strong {
+    color: #96713d;
+    font-family: var(--heading-font);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ADDITIONAL MESSAGE */
+
+.review-message {
+    margin-top: 14px;
+}
+
+.review-message p {
+    margin-top: 5px;
+
+    color: #514a3f;
+    font-size: 10px;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+/* CONFIRMATION */
+
+.consent-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 17px;
+
+    color: #5d5345;
+    font-size: 10px;
+    line-height: 1.6;
+
+    cursor: pointer;
+}
+
+.consent-field input {
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+
+    accent-color: #a18452;
+
+    cursor: pointer;
+}
+
+/* BUTTON AREA */
+
+.review-step .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.review-step .form-actions .form-button {
+    min-height: 42px;
+    margin: 0;
+}
+
+/* ========================================
+   STEP 03 — WHITE REVIEW INFORMATION
+======================================== */
+
+.review-card-heading {
+    color: #e7bd72;
+}
+
+.review-item span,
+.review-message > span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.review-item strong {
+    color: #ffffff;
+}
+
+.review-total {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(231, 189, 114, 0.35);
+}
+
+.review-total span {
+    color: #ffffff;
+}
+
+.review-total strong {
+    color: #e7bd72;
+}
+
+.review-message p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.consent-field {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ========================================
+   STEP 03 — REVIEW REGISTRATION
+======================================== */
+
+.review-step {
+    
+    
+}
+
+.review-step.active {
+    
+    
+}
+
+/* STEP HEADING */
+
+.review-step .form-step-heading {
+    margin-bottom: 12px;
+}
+
+.review-step .form-step-heading > span {
+    color: #e7bd72;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.review-step .form-step-heading h4 {
+    margin-top: 5px;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.review-step .form-step-heading p {
+    margin-top: 3px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 9px;
+}
+
+/* REVIEW CARD */
+
+.review-step .review-card {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 0;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(231, 189, 114, 0.22);
+    border-radius: 13px;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.12),
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* CARD HEADINGS */
+
+.review-step .review-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 6px;
+
+    color: #e7bd72;
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+}
+
+.review-step .review-card-heading i {
+    width: 13px;
+    height: 13px;
+}
+
+.review-step .attendance-review-heading {
+    margin-top: 9px;
+}
+
+/* INFORMATION ROWS */
+
+.review-step .review-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding: 6px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.review-step .review-item span,
+.review-step .review-message > span {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 9px;
+}
+
+.review-step .review-item strong {
+    max-width: 65%;
+
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+/* DIVIDER */
+
+.review-step .review-divider {
+    width: 100%;
+    height: 1px;
+    margin: 9px 0;
+
+    background: rgba(231, 189, 114, 0.2);
+}
+
+/* TOTAL ATTENDEES */
+
+.review-step .review-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 8px;
+    padding: 8px 11px;
+
+    background: rgba(231, 189, 114, 0.09);
+
+    border: 1px solid rgba(231, 189, 114, 0.24);
+    border-radius: 8px;
+}
+
+.review-step .review-total span {
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.review-step .review-total strong {
+    color: #e7bd72;
+    font-family: var(--heading-font);
+    font-size: 19px;
+}
+
+/* ADDITIONAL MESSAGE */
+
+.review-step .review-message {
+    margin-top: 9px;
+}
+
+.review-step .review-message p {
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 9px;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+/* CONSENT */
+
+.review-step .consent-field {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 12px;
+
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.review-step .consent-field input {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    margin: 0;
+
+    accent-color: #e7bd72;
+}
+
+/* NAVIGATION */
+
+.review-step .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    margin-top: 14px;
+}
+
+.review-step .form-actions .form-button {
+    flex: 1;
+    min-width: 0;
+    min-height: 38px;
+
+    margin: 0;
+    padding: 9px 10px;
+
+    font-size: 9px;
+}
+
+
+
+/* =========================================
+   STEP 03 — FINAL FIT ADJUSTMENT
+========================================= */
+
+.review-step.active {
+    
+    
+    
+}
+
+.review-step .form-step-heading {
+    margin-bottom: 8px !important;
+}
+
+.review-step .form-step-heading h4 {
+    margin-top: 3px !important;
+    font-size: 23px !important;
+}
+
+.review-step .form-step-heading p {
+    margin-top: 2px !important;
+    font-size: 8px !important;
+}
+
+.review-step .review-card {
+    padding: 9px 13px !important;
+}
+
+.review-step .review-card-heading {
+    margin-bottom: 4px !important;
+    gap: 7px;
+}
+
+.review-step .attendance-review-heading {
+    margin-top: 6px !important;
+}
+
+.review-step .review-item {
+    padding: 4px 0 !important;
+}
+
+.review-step .review-divider {
+    margin: 6px 0 !important;
+}
+
+.review-step .review-total {
+    margin-top: 6px !important;
+    padding: 6px 10px !important;
+}
+
+.review-step .review-total strong {
+    font-size: 17px !important;
+}
+
+.review-step .review-message {
+    margin-top: 6px !important;
+}
+
+.review-step .consent-field {
+    margin-top: 8px !important;
+    font-size: 8px !important;
+}
+
+.review-step .form-actions {
+    margin-top: 9px !important;
+    gap: 9px;
+}
+
+.review-step .form-actions .form-button {
+    min-height: 34px !important;
+    padding: 7px 9px !important;
+    font-size: 8px !important;
+}
+
+
+
+/* =========================================
+   FO AUTHORITY — REGISTRATION SUCCESS TEXT
+========================================= */
+
+#formSuccess {
+    color: #f7f2e8;
+}
+
+/* REGISTRATION COMPLETE */
+#formSuccess > span,
+#formSuccess .success-eyebrow {
+    color: #e7bd72 !important;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+/* You're on the list. */
+#formSuccess h3,
+#formSuccess h4 {
+    color: #ffffff !important;
+    font-family: var(--heading-font);
+    font-weight: 600;
+}
+
+/* Thank-you message */
+#formSuccess p {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+
+/* =========================================
+   FO AUTHORITY — COMPLETED PROGRESS STATE
+========================================= */
+
+.form-progress.registration-complete .progress-step {
+    color: #22c55e;
+}
+
+.form-progress.registration-complete .progress-step span {
+    color: #ffffff;
+    background: #16a34a;
+    border: 1px solid #4ade80;
+    box-shadow:
+        0 0 10px rgba(34, 197, 94, 0.45),
+        0 0 22px rgba(34, 197, 94, 0.2);
+}
+
+.form-progress.registration-complete .progress-step small {
+    color: #bbf7d0;
+}
+
+.form-progress.registration-complete .progress-track span {
+    width: 100%;
+    background: #22c55e;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+.form-progress.registration-complete .progress-track {
+    background: rgba(34, 197, 94, 0.25);
+}
+
+
+
+/* =========================================
+   FO AUTHORITY — SUCCESS ICON ANIMATION
+========================================= */
+
+.success-icon {
+    position: relative;
+    isolation: isolate;
+    background: #16a34a !important;
+    border: 1px solid #4ade80 !important;
+    box-shadow:
+        0 0 15px rgba(34, 197, 94, 0.55),
+        0 0 30px rgba(34, 197, 94, 0.25) !important;
+    animation: successGlow 2.2s ease-in-out infinite;
+}
+
+/* Keep the checkmark clearly visible */
+.success-icon svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    stroke-width: 2.4px;
+    position: relative;
+    z-index: 2;
+}
+
+/* First expanding wave */
+.success-icon::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border: 2px solid rgba(74, 222, 128, 0.8);
+    border-radius: 50%;
+    z-index: -1;
+    animation: successWave 2.2s ease-out infinite;
+}
+
+/* Second expanding wave */
+.success-icon::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border: 2px solid rgba(34, 197, 94, 0.65);
+    border-radius: 50%;
+    z-index: -1;
+    animation: successWave 2.2s ease-out 1.1s infinite;
+}
+
+/* Expanding ripple */
+@keyframes successWave {
+    0% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: scale(2.1);
+        opacity: 0;
+    }
+}
+
+/* Soft living glow */
+@keyframes successGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 15px rgba(34, 197, 94, 0.45),
+            0 0 25px rgba(34, 197, 94, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 22px rgba(34, 197, 94, 0.75),
+            0 0 40px rgba(34, 197, 94, 0.4);
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .success-icon,
+    .success-icon::before,
+    .success-icon::after {
+        animation: none !important;
+    }
+}
+
+
+
+/* =========================================
+   FO AUTHORITY — GLASS EMBOSSED RETURN BUTTON
+========================================= */
+
+.success-return-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 25px;
+    padding: 13px 25px;
+
+    color: #f7f2e8;
+    font-family: var(--body-font);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.035)
+    );
+
+    border: 1px solid rgba(231, 189, 114, 0.48);
+    border-radius: 50px;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.32),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.2),
+        0 5px 14px rgba(0, 0, 0, 0.25),
+        0 0 12px rgba(231, 189, 114, 0.08);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.success-return-btn i {
+    width: 14px;
+    height: 14px;
+    color: #e7bd72;
+    transition: transform 0.35s ease;
+}
+
+.success-return-btn:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        145deg,
+        rgba(231, 189, 114, 0.2),
+        rgba(255, 255, 255, 0.07)
+    );
+
+    border-color: rgba(231, 189, 114, 0.8);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.4),
+        0 8px 22px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(231, 189, 114, 0.2);
+}
+
+.success-return-btn:hover i {
+    transform: translate(3px, -3px);
+}
+
+.success-return-btn:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+
+/* =========================================
+   FO AUTHORITY — STEP 01 GLASS BUTTON
+========================================= */
+
+.form-step[data-step="1"] .next-button {
+    color: #f7f2e8 !important;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.035)
+    ) !important;
+
+    border: 1px solid rgba(231, 189, 114, 0.48) !important;
+    border-radius: 50px;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.32),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.2),
+        0 5px 14px rgba(0, 0, 0, 0.25),
+        0 0 12px rgba(231, 189, 114, 0.08) !important;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition: all 0.35s ease;
+}
+
+/* Arrow */
+.form-step[data-step="1"] .next-button i {
+    color: #e7bd72;
+    transition: transform 0.35s ease;
+}
+
+/* Hover */
+.form-step[data-step="1"] .next-button:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        145deg,
+        rgba(231, 189, 114, 0.2),
+        rgba(255, 255, 255, 0.07)
+    ) !important;
+
+    border-color: rgba(231, 189, 114, 0.8) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.4),
+        0 8px 22px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(231, 189, 114, 0.2) !important;
+}
+
+.form-step[data-step="1"] .next-button:hover i {
+    transform: translateX(4px);
+}
+
+/* Press */
+.form-step[data-step="1"] .next-button:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+
+/* =========================================
+   FO AUTHORITY — STEP 02 GLASS BUTTON
+========================================= */
+
+.form-step[data-step="2"] .form-button-next {
+    color: #f7f2e8 !important;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.035)
+    ) !important;
+
+    border: 1px solid rgba(231, 189, 114, 0.48) !important;
+    border-radius: 50px;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.32),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.2),
+        0 5px 14px rgba(0, 0, 0, 0.25),
+        0 0 12px rgba(231, 189, 114, 0.08) !important;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition: all 0.35s ease;
+}
+
+/* Arrow */
+.form-step[data-step="2"] .form-button-next i {
+    color: #e7bd72;
+    transition: transform 0.35s ease;
+}
+
+/* Hover */
+.form-step[data-step="2"] .form-button-next:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        145deg,
+        rgba(231, 189, 114, 0.2),
+        rgba(255, 255, 255, 0.07)
+    ) !important;
+
+    border-color: rgba(231, 189, 114, 0.8) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.4),
+        0 8px 22px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(231, 189, 114, 0.2) !important;
+}
+
+.form-step[data-step="2"] .form-button-next:hover i {
+    transform: translateX(4px);
+}
+
+/* Press */
+.form-step[data-step="2"] .form-button-next:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+
+/* =========================================
+   FO AUTHORITY — STEP 03 COMPLETE REGISTRATION
+   GLASSMORPHIC + EMBOSSED
+========================================= */
+
+.review-step .form-button-next[type="submit"] {
+    color: #f7f2e8 !important;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.17),
+        rgba(255, 255, 255, 0.035)
+    ) !important;
+
+    border: 1px solid rgba(231, 189, 114, 0.55) !important;
+    border-radius: 9px !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.4),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.22),
+        0 5px 14px rgba(0, 0, 0, 0.28),
+        0 0 15px rgba(231, 189, 114, 0.12) !important;
+
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+
+    transition: all 0.35s ease;
+}
+
+.review-step .form-button-next[type="submit"] i {
+    color: #e7bd72 !important;
+    transition: transform 0.35s ease;
+}
+
+.review-step .form-button-next[type="submit"]:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        145deg,
+        rgba(231, 189, 114, 0.22),
+        rgba(255, 255, 255, 0.08)
+    ) !important;
+
+    border-color: rgba(231, 189, 114, 0.85) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.45),
+        0 8px 22px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(231, 189, 114, 0.22) !important;
+}
+
+.review-step .form-button-next[type="submit"]:hover i {
+    transform: translateX(4px);
+}
+
+.review-step .form-button-next[type="submit"]:active {
+    transform: translateY(0) scale(0.97);
+}
+
+.contact-whatsapp {
+    display: inline-flex;
+    align-items: center;
+
+    color: #e7bd72;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.contact-whatsapp:hover {
+    color: #ffffff;
+}
+
+
+
+
+
+/* =========================================================
+   FO AUTHORITY — MOBILE NAVIGATION & LAYOUT REFINEMENT
+   Add this block at the VERY END of styles.css
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* MAIN MOBILE SCREEN */
+
+    .experience {
+        width: 100%;
+        height: 100svh;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .main-interface {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    /* BOTTOM NAVIGATION BAR */
+
+    .side-navigation {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: calc(12px + env(safe-area-inset-bottom));
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: auto;
+        height: 66px;
+        min-height: 66px;
+        padding: 7px 10px;
+
+        background: rgba(17, 16, 15, 0.88);
+        border: 1px solid rgba(201, 166, 107, 0.25);
+        border-radius: 18px;
+
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+
+        box-shadow:
+            0 10px 35px rgba(0, 0, 0, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+        z-index: 100;
+    }
+
+    /* Hide desktop branding and footer */
+
+    .side-navigation > .brand,
+    .navigation-footer {
+        display: none;
+    }
+
+    /* FIVE ICONS */
+
+    .navigation-links {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        gap: 5px;
+    }
+
+    .nav-heading {
+        display: none;
+    }
+
+    .nav-item {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        min-width: 0;
+        height: 46px;
+        min-height: 46px;
+
+        padding: 0;
+
+        color: var(--muted);
+        background: transparent;
+
+        border: 1px solid transparent;
+        border-radius: 13px;
+
+        transform: none;
+        text-align: center;
+    }
+
+    .nav-item:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* Icon styling */
+
+    .nav-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-icon i,
+    .nav-icon svg {
+        display: block;
+        width: 21px;
+        height: 21px;
+        stroke-width: 1.7;
+    }
+
+    .nav-item.active {
+        color: var(--gold-light);
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(201, 166, 107, 0.20),
+                rgba(201, 166, 107, 0.06)
+            );
+
+        border-color: rgba(201, 166, 107, 0.25);
+
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.07),
+            0 3px 12px rgba(201, 166, 107, 0.08);
+    }
+
+    /* Hide page names and indicators */
+
+    .nav-label,
+    .nav-number,
+    .nav-indicator {
+        display: none !important;
+    }
+
+    /* PORTRAIT STAGE */
+
+    .portrait-stage {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+
+        border-radius: 0;
+    }
+
+    .portrait-frame {
+        inset: 11px;
+    }
+
+    /* MAIN CONTENT */
+
+    .section-content {
+        
+
+        
+        
+        
+
+        
+        
+
+        
+
+        
+        z-index: 5;
+    }
+
+    .content-panel {
+        
+        
+        
+    }
+
+    /* Keep the stage footer above the navigation */
+
+    .stage-footer {
+        bottom: 94px;
+        left: 22px;
+        right: 22px;
+    }
+
+    /* REGISTRATION SECTION */
+
+    .section-content:has(.registration-panel) {
+        
+        
+
+        
+        
+        
+
+        
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    .section-content:has(.registration-panel)::-webkit-scrollbar {
+        display: none;
+    }
+
+    .registration-panel {
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+
+        
+        
+
+        
+    }
+
+    .registration-intro {
+        
+        
+    }
+
+    .form-scene {
+        
+        
+        
+        
+    }
+
+    .registration-card {
+        
+        
+    }
+
+    /* Prevent form fields from exceeding the screen */
+
+    .input-wrapper,
+    .input-wrapper input,
+    .input-wrapper select,
+    .input-wrapper textarea {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .side-navigation {
+        left: 10px;
+        right: 10px;
+        height: 62px;
+        min-height: 62px;
+        padding: 6px 8px;
+    }
+
+    .nav-item {
+        height: 43px;
+        min-height: 43px;
+    }
+
+    .nav-icon i,
+    .nav-icon svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .section-content {
+        
+        
+    }
+
+    .registration-card {
+        
+    }
+
+}
+
+
+
+/* =========================================================
+   FO AUTHORITY — FINAL MOBILE RESPONSIVE FIX
+   Bottom icon navigation + mobile content layout
+   Desktop design remains unchanged
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    /* MAIN SCREEN */
+    .experience {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .main-interface {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .scene-viewport {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .portrait-stage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* BOTTOM NAVIGATION BAR */
+    .side-navigation {
+        position: fixed !important;
+        top: auto !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 68px;
+
+        padding: 9px 8px calc(9px + env(safe-area-inset-bottom)) !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        background: rgba(9, 9, 9, 0.96) !important;
+        border-top: 1px solid rgba(201, 166, 107, 0.25);
+
+        z-index: 1000 !important;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+    }
+
+    /* Hide desktop branding and footer */
+    .side-navigation .brand,
+    .side-navigation .navigation-footer {
+        display: none !important;
+    }
+
+    /* Navigation links */
+    .navigation-links {
+        width: 100% !important;
+        height: 100% !important;
+
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Individual navigation items */
+    .nav-item {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 48px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 0 !important;
+        padding: 7px 2px !important;
+
+        background: transparent !important;
+        border: none !important;
+        text-align: center !important;
+    }
+
+    /* Display icons */
+    .nav-icon {
+        width: 25px !important;
+        height: 25px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        color: var(--muted) !important;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-icon i,
+    .nav-icon svg {
+        width: 21px !important;
+        height: 21px !important;
+        stroke-width: 1.7px;
+    }
+
+    /* Active navigation icon */
+    .nav-item.active .nav-icon {
+        color: var(--gold-light) !important;
+        transform: translateY(-2px);
+    }
+
+    /* Hide desktop navigation text and decorations */
+    .nav-label,
+    .nav-number,
+    .nav-indicator {
+        display: none !important;
+    }
+
+
+    /* MOBILE CONTENT AREA */
+    .section-content {
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+        
+
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+        z-index: 10 !important;
+    }
+
+    /* Remove desktop content positioning */
+    .content-panel {
+        
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+        
+    }
+
+    .content-panel.active {
+        
+    }
+
+
+    /* REGISTRATION SECTION */
+    .registration-panel {
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        
+        
+    }
+
+    .registration-card,
+    .form-scene {
+        
+        
+        
+    }
+
+    /* Ensure form fields fit the screen */
+    .registration-card input,
+    .registration-card select,
+    .registration-card textarea {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* FOOTER */
+    .stage-footer {
+        display: none !important;
+    }
+
+    .stage-footer-left {
+        left: 0 !important;
+    }
+}
+
+
+/* SMALLER PHONES */
+@media screen and (max-width: 390px) {
+
+    .side-navigation {
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+    }
+
+    .navigation-links {
+        gap: 1px !important;
+    }
+
+    .nav-item {
+        min-height: 44px !important;
+        padding: 5px 1px !important;
+    }
+
+    .nav-icon {
+        width: 23px !important;
+        height: 23px !important;
+    }
+
+    .nav-icon i,
+    .nav-icon svg {
+        width: 19px !important;
+        height: 19px !important;
+    }
+
+    .section-content {
+        
+        
+    }
+}
+
+
+
+
+/* DESKTOP */
+@media screen and (min-width: 701px) {
+
+    .section-content:has(.registration-panel) {
+        
+    }
+
+    .registration-panel {
+        
+    }
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+
+    .registration-intro {
+        
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+    }
+
+    .registration-intro .intro-title {
+        
+        
+
+        
+        
+        text-align: left !important;
+    }
+
+    .registration-intro .intro-eyebrow {
+        
+        
+
+        
+        
+        
+
+        
+        
+
+        
+        white-space: nowrap !important;
+        text-align: right !important;
+    }
+
+    .registration-intro .intro-description {
+        
+        
+        
+    }
+
+}
+
+
+@media screen and (max-width: 700px) {
+    .registration-card {
+        
+    }
+
+}
+
+
+
+
+
+@media screen and (max-width: 700px) {
+
+    .registration-card {
+        
+    }
+
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+    .side-navigation {
+        height: 42px !important;
+        min-height: 42px !important;
+        padding-top: 9px !important;
+        padding-bottom: 9px !important;
+    }
+
+    .side-navigation .nav-item {
+        min-height: 42px !important;
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
+    }
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .side-navigation .nav-item i,
+    .side-navigation .nav-item svg,
+    .side-navigation .nav-icon {
+        transform: translateY(-4px) !important;
+    }
+
+}
+@media screen and (max-width: 700px) {
+
+    .side-navigation .nav-indicator {
+        position: relative !important;
+        top: -30px !important;
+    }
+
+}
+
+
+/* =========================================================
+   FO AUTHORITY — MOBILE REGISTRATION LAYOUT FIX
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    /* Keep registration content inside the visible area */
+    .section-content:has(.registration-panel) {
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        /* overflow-y: auto !important; */
+
+        
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Registration layout */
+    .registration-panel {
+        
+
+        
+        
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+    }
+
+    /* Intro content */
+    .registration-intro {
+        
+        
+
+        
+        
+
+        
+        
+    }
+
+    /* Registration card */
+    .registration-card {
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        
+
+        
+
+        /* Keep overflow hidden for the liquid-glass video */
+        
+    }
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .section-content:has(.registration-panel) {
+        
+    }
+
+    .registration-intro {
+        
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    .side-navigation {
+        bottom: 5px !important;
+    }
+
+}
+
+
+ /* @media screen and (max-width: 700px) {
+
+    .registration-card {
+        padding-top: 39px !important;
+        padding-bottom: 24px !important;
+
+        min-height: calc(100% + -10px) !important;
+
+        box-sizing: border-box !important;
+    }
+
+} 
+ */
+
+/* =========================================================
+   FO AUTHORITY — AUTHORITATIVE REGISTRATION LAYOUT
+   Consolidated responsive layout and hidden internal scrolling
+========================================================= */
+
+/* Keep the carousel panels controlled without conflicting layout rules. */
+.section-content {
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.content-panel {
+    display: none;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.content-panel.active {
+    display: block;
+}
+
+/* The registration panel is the active content panel's grid layout. */
+#section-registration.content-panel.active {
+    display: grid !important;
+}
+
+.registration-panel {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Shared invitation heading arrangement.
+   The eyebrow sits beside the first line of the heading. */
+.registration-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: start;
+    column-gap: 10px;
+    row-gap: 7px;
+    width: 100%;
+    min-width: 0;
+    max-width: 440px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.registration-intro .intro-title {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    margin: 0;
+    color: var(--ivory);
+    font-family: var(--heading-font);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+}
+
+.registration-intro .intro-title span {
+    margin-top: 5px;
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+.registration-intro .intro-eyebrow {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+    margin: 7px 0 0;
+    color: var(--gold-light);
+    font-family: var(--body-font);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.registration-intro .intro-description {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: 340px;
+    margin: 0;
+    color: rgba(244, 239, 229, 0.72);
+    font-family: var(--body-font);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0.025em;
+}
+
+/* =========================================================
+   DESKTOP — EDITORIAL TEXT LEFT, GLASS FORM RIGHT
+========================================================= */
+
+@media screen and (min-width: 901px) {
+    .section-content:has(.registration-panel) {
+        position: absolute !important;
+        top: 50% !important;
+        right: clamp(25px, 4vw, 65px) !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: min(950px, calc(100vw - 300px)) !important;
+        max-width: none !important;
+        height: auto !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: translateY(-50%) !important;
+        translate: none !important;
+        overflow: visible !important;
+        z-index: 10;
+    }
+
+    .registration-panel,
+    #section-registration.content-panel.active {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 392px !important;
+        grid-template-rows: minmax(0, 1fr);
+        align-items: center;
+        justify-content: stretch;
+        gap: clamp(25px, 4vw, 60px);
+        width: 100%;
+        max-width: none;
+        height: min(86svh, 760px);
+        max-height: 760px;
+        margin: 0;
+        padding: 0;
+        overflow: visible !important;
+    }
+
+    .registration-intro {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: end;
+        align-self: center;
+        max-width: 440px;
+    }
+
+    .registration-intro .intro-title {
+        font-size: clamp(48px, 5vw, 76px);
+    }
+
+    .form-scene {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        align-self: stretch;
+        width: 392px;
+        max-width: 100%;
+        height: min(86svh, 760px);
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        overflow: visible;
+        perspective: none;
+    }
+
+    .registration-card {
+        --registration-card-height: min(86svh, 760px);
+        --registration-card-inner-height: calc(var(--registration-card-height) - 52px);
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: var(--registration-card-height);
+        min-height: 0;
+        max-height: 760px;
+        margin: 0;
+        padding: 25px 23px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        border-radius: 30px;
+    }
+
+    .registration-card::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    /* The sticky video layer stays pinned while the card contents scroll. */
+    .registration-card .liquid-glass-background {
+        position: sticky !important;
+        top: 0;
+        flex: 0 0 var(--registration-card-inner-height);
+        width: 100%;
+        height: var(--registration-card-inner-height);
+        min-height: var(--registration-card-inner-height);
+        margin-bottom: calc(-1 * var(--registration-card-inner-height));
+        z-index: 0;
+        overflow: hidden;
+        border-radius: inherit;
+        pointer-events: none;
+    }
+}
+
+/* =========================================================
+   TABLET — STACKED INTRODUCTION AND FORM
+========================================================= */
+
+@media screen and (min-width: 701px) and (max-width: 900px) {
+    .section-content:has(.registration-panel) {
+        position: absolute !important;
+        top: 68px !important;
+        right: 24px !important;
+        bottom: 24px !important;
+        left: auto !important;
+        width: min(480px, calc(100vw - 285px)) !important;
+        max-width: none !important;
+        height: auto !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        translate: none !important;
+        overflow: hidden !important;
+        z-index: 10;
+    }
+
+    .registration-panel,
+    #section-registration.content-panel.active {
+        --registration-card-height: min(66svh, 560px);
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-rows: auto minmax(0, 1fr);
+        align-items: stretch;
+        justify-content: stretch;
+        gap: 10px;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        max-height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden !important;
+    }
+
+    .registration-intro {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: stretch;
+        align-self: start;
+        max-width: 100%;
+    }
+
+    .registration-intro .intro-title {
+        font-size: clamp(36px, 4.4vw, 48px);
+    }
+
+    .registration-intro .intro-description {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .form-scene {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        max-width: 100%;
+        height: min(66svh, 560px);
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        overflow: visible;
+    }
+
+    .registration-card {
+        --registration-card-inner-height: calc(var(--registration-card-height) - 42px);
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: var(--registration-card-height);
+        min-height: 0;
+        max-height: var(--registration-card-height);
+        margin: 0;
+        padding: 20px 17px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        border-radius: 24px;
+    }
+
+    .registration-card::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    .registration-card .liquid-glass-background {
+        position: sticky !important;
+        top: 0;
+        flex: 0 0 var(--registration-card-inner-height);
+        width: 100%;
+        height: var(--registration-card-inner-height);
+        min-height: var(--registration-card-inner-height);
+        margin-bottom: calc(-1 * var(--registration-card-inner-height));
+        z-index: 0;
+        overflow: hidden;
+        border-radius: inherit;
+        pointer-events: none;
+    }
+}
+
+/* =========================================================
+   MOBILE — FIXED CARD, INDEPENDENT HIDDEN-SCROLLBAR CONTENT
+========================================================= */
+
+@media screen and (max-width: 700px) {
+    .section-content:has(.registration-panel) {
+        position: absolute !important;
+        top: 8px !important;
+        right: 12px !important;
+        bottom: calc(52px + env(safe-area-inset-bottom)) !important;
+        left: 12px !important;
+        width: auto !important;
+        height: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        translate: none !important;
+        overflow: hidden !important;
+        overscroll-behavior: none;
+        z-index: 10 !important;
+    }
+
+    .registration-panel,
+    #section-registration.content-panel.active {
+        --registration-card-height: clamp(320px, calc(100svh - 225px), 620px);
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-rows: auto var(--registration-card-height);
+        align-items: stretch;
+        justify-content: stretch;
+        gap: 8px;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden !important;
+    }
+
+    .registration-intro {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .registration-intro .intro-title {
+        font-size: clamp(32px, 8vw, 43px);
+        line-height: 0.95;
+    }
+
+    .registration-intro .intro-eyebrow {
+        margin-top: 5px;
+        font-size: 8px;
+        letter-spacing: 0.18em;
+    }
+
+    .registration-intro .intro-description {
+        max-width: 100%;
+        margin: 0;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .form-scene {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        max-width: 520px;
+        height: var(--registration-card-height);
+        min-height: 0;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        overflow: visible;
+    }
+
+    .registration-card {
+        --registration-card-inner-height: calc(var(--registration-card-height) - 34px);
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: var(--registration-card-height);
+        min-width: 0;
+        min-height: 0;
+        max-width: 100%;
+        max-height: var(--registration-card-height);
+        margin: 0;
+        padding: 16px 13px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        border-radius: 24px;
+    }
+
+    .registration-card::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    .registration-card .liquid-glass-background {
+        position: sticky !important;
+        top: 0;
+        flex: 0 0 var(--registration-card-inner-height);
+        width: 100%;
+        height: var(--registration-card-inner-height);
+        min-height: var(--registration-card-inner-height);
+        margin-bottom: calc(-1 * var(--registration-card-inner-height));
+        z-index: 0;
+        overflow: hidden;
+        border-radius: inherit;
+        pointer-events: none;
+    }
+
+    .registration-card .form-header,
+    .registration-card .form-progress {
+        flex: 0 0 auto;
+        min-width: 0;
+    }
+
+    .registration-card .form-header {
+        margin-bottom: 12px;
+    }
+
+    .registration-card .form-progress {
+        margin-bottom: 14px;
+    }
+
+    .registration-card .form-step,
+    .registration-card .form-step.active,
+    .registration-card .attendance-step,
+    .registration-card .review-step {
+        min-width: 0;
+        height: auto;
+        min-height: max-content;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .registration-card .form-step:not(.active) {
+        display: none !important;
+    }
+
+    .registration-card .form-step.active {
+        display: block !important;
+    }
+
+    .registration-card .attendance-step.active,
+    .registration-card .review-step.active {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .registration-card .form-success.active {
+        display: block;
+    }
+
+    .registration-card input,
+    .registration-card select,
+    .registration-card textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .stage-footer {
+        display: none !important;
+    }
+}
+
+/* EXTRA SMALL PHONES */
+@media screen and (max-width: 390px) {
+    .section-content:has(.registration-panel) {
+        right: 10px !important;
+        left: 10px !important;
+    }
+
+    .registration-intro {
+        column-gap: 6px;
+    }
+
+    .registration-intro .intro-eyebrow {
+        font-size: 7px;
+        letter-spacing: 0.15em;
+    }
+
+    .registration-intro .intro-title {
+        font-size: clamp(30px, 8vw, 37px);
+    }
+
+    .registration-card {
+        padding: 16px 13px;
+    }
+
+    .registration-card .progress-step small {
+        font-size: 7px;
+    }
+}
+
+/* =========================================================
+   SHARED SCROLL AND STEP BEHAVIOUR
+========================================================= */
+
+/* Scroll the whole glass card, not the page behind it.
+   The video background remains sticky inside the card. */
+.registration-card {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.registration-card::-webkit-scrollbar,
+.registration-card #guestRegistrationForm::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.registration-card > *:not(.liquid-glass-background) {
+    position: relative;
+    z-index: 2;
+}
+
+.registration-card .form-header,
+.registration-card .form-progress {
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.registration-card #guestRegistrationForm {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: 100%;
+}
+
+.registration-card .liquid-glass-background {
+    z-index: 0;
+}
+
+.registration-card .form-step {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: max-content;
+    max-height: none;
+    overflow: visible;
+}
+
+.registration-card .form-step:not(.active) {
+    display: none !important;
+}
+
+.registration-card .form-step.active {
+    display: block !important;
+}
+
+.registration-card .attendance-step.active,
+.registration-card .review-step.active {
+    display: flex !important;
+    flex-direction: column;
+    height: auto;
+    min-height: max-content;
+    max-height: none;
+    overflow: visible;
+}
+
+/* Keep the card height controlled by the layout, not by the active step. */
+.registration-card #guestRegistrationForm {
+    min-height: 0;
+    height: auto;
+    overflow: visible;
+}
+
+
+/* =====================================================
+   FO AUTHORITY — SINGLE GLASS CONTAINER
+   ONE CONTAINER, SCROLLABLE CONTENT
+===================================================== */
+
+/* OUTER REGISTRATION CARD — NEVER SCROLLS */
+
+#section-registration .registration-card {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    min-height: 0 !important;
+
+    overflow: hidden !important;
+
+    isolation: isolate;
+}
+
+/* LIQUID GLASS BACKGROUND — STAYS BEHIND CONTENT */
+
+#section-registration .registration-card .liquid-glass-background {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+
+    z-index: 0 !important;
+
+    overflow: hidden !important;
+
+    pointer-events: none !important;
+}
+
+/* SINGLE CONTENT AREA — THE ONLY SCROLLABLE ELEMENT */
+
+#section-registration .registration-card-content {
+    position: relative !important;
+
+    z-index: 3 !important;
+
+    flex: 1 1 auto !important;
+
+    width: 100% !important;
+    min-height: 0 !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    box-sizing: border-box !important;
+
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior: contain;
+}
+
+/* HIDE SCROLLBAR */
+
+#section-registration .registration-card-content::-webkit-scrollbar {
+    display: none !important;
+
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* KEEP ALL CONTENT ABOVE THE VIDEO */
+
+#section-registration .registration-card-content > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* PREVENT FORM FROM CREATING ANOTHER SCROLL AREA */
+
+#section-registration .registration-card-content #guestRegistrationForm {
+    overflow: visible !important;
+    min-height: 0;
+}
+
+/* ================================================
+   FO AUTHORITY — REGISTRATION CONTENT SCALE
+   REDUCE ALL FORM CONTENT BY 17%
+================================================ */
+
+#section-registration .registration-card-content {
+    zoom: 0.99;
+}
+
+/* =========================================
+   REMOVE MOBILE TAP HIGHLIGHT
+========================================= */
+
+*,
+*::before,
+*::after {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none;
+}
+
+a,
+button,
+i,
+svg,
+[data-lucide],
+[role="button"],
+[onclick] {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+}
+
+/* REMOVE FOCUS HIGHLIGHT AFTER MOBILE TAP */
+
+a:focus,
+a:active,
+button:focus,
+button:active,
+i:focus,
+i:active,
+svg:focus,
+svg:active {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+}
+
+
+/* =====================================================
+   FO AUTHORITY — TOP RIGHT SOUND CONTROL
+===================================================== */
+
+.background-audio-control {
+    position: fixed;
+
+    top: 22px;
+    right: 22px;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 42px;
+    padding: 0 17px;
+
+    border: 1px solid rgba(214, 179, 106, 0.6);
+    border-radius: 50px;
+
+    background: rgba(12, 10, 13, 0.82);
+    color: #d6b36a;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition: all 0.3s ease;
+}
+
+.background-audio-control:hover {
+    background: rgba(214, 179, 106, 0.15);
+    border-color: #d6b36a;
+    transform: translateY(-2px);
+}
+
+.audio-control-icon {
+    font-size: 17px;
+    line-height: 1;
+}
+
+.background-audio-control.audio-playing .audio-control-icon {
+    animation: audioIconPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes audioIconPulse {
+    0%, 100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* MOBILE POSITION */
+
+@media (max-width: 600px) {
+
+    .background-audio-control {
+        top: 14px;
+        right: 14px;
+
+        min-height: 38px;
+        padding: 0 13px;
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE REGISTRATION NAVIGATION GUIDE
+===================================================== */
+
+.mobile-registration-guide {
+    position: fixed;
+    z-index: 100000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    padding: 12px 18px;
+
+    background: rgba(12, 10, 13, 0.96);
+    border: 1px solid rgba(214, 179, 106, 0.85);
+    border-radius: 12px;
+
+    color: #ffffff;
+
+    text-align: center;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translate(-50%, 10px) scale(0.9);
+
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.4);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.mobile-registration-guide.guide-visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(-50%, 0) scale(1);
+}
+
+.guide-pointer {
+    color: #d6b36a;
+    font-size: 25px;
+    line-height: 1;
+
+    animation: registrationPointerBounce 0.8s ease-in-out infinite;
+}
+
+.guide-message {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.guide-message strong {
+    display: block;
+    margin-top: 4px;
+
+    color: #d6b36a;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* HIGHLIGHT THE REGISTRATION ICON */
+
+.registration-guide-highlight {
+    position: relative;
+    z-index: 100001 !important;
+
+    border-radius: 14px !important;
+
+    outline: 2px solid #d6b36a !important;
+    outline-offset: 5px;
+
+    box-shadow:
+        0 0 0 7px rgba(214, 179, 106, 0.12),
+        0 0 25px rgba(214, 179, 106, 0.65) !important;
+
+    animation: registrationIconPulse 1s ease-in-out infinite;
+}
+
+@keyframes registrationPointerBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes registrationIconPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 0 7px rgba(214, 179, 106, 0.12),
+            0 0 15px rgba(214, 179, 106, 0.4);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 10px rgba(214, 179, 106, 0.2),
+            0 0 30px rgba(214, 179, 106, 0.8);
+    }
+}
+
+/* DESKTOP: NEVER DISPLAY THE GUIDE */
+
+@media (min-width: 769px) {
+    .mobile-registration-guide {
+        display: none !important;
+    }
+
+    .registration-guide-highlight {
+        outline: none !important;
+        box-shadow: none !important;
+        animation: none !important;
+    }
+}
